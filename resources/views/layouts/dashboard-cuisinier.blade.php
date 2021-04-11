@@ -10,8 +10,8 @@
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">  
-    <title>Savoureuse | Dashboard</title>
+    <meta name="robots" content="noindex,nofollow">
+    <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="dashboard/plugins/images/favicon.png">
@@ -131,35 +131,23 @@
                                 <span class="hide-menu">Profile</span>
                             </a>
                         </li>
+                        
                       
-            
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Gérer Comptes</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
-                                aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Gérer Recettes</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
-                                aria-expanded="false">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Gérer Site</span>
+                                <span class="hide-menu">Mes Recettes</span>
                             </a>
                         </li>
                         
                         
+                        
+                    
                         <li class="text-center p-20 upgrade-btn">
                             <a href="https://www.wrappixel.com/templates/ampleadmin/"
                                 class="btn d-grid btn-danger text-white" target="_blank">
-                                Déconnecter</a>
+                                Déconneccter</a>
                         </li>
                     </ul>
 
