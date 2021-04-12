@@ -1,7 +1,12 @@
 @extends('layouts.dashboard-admin')
 @section('content')
 
+<style>
+    .fas {
+    font-size: 11px;
+}
 
+    </style>
    
        
         <!-- ============================================================== -->
@@ -30,8 +35,6 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-       
-     
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -45,8 +48,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Vous trouverez ci-joint la table des admins</h3>
-                            
+                            <h3 class="box-title">Vous trouverez ci-joint la table des cuisiniers</h3>
                             
                             <div class="table-responsive">
                                 <table class="table text-nowrap">
@@ -60,19 +62,31 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($admins as $admin )
-                                            
-                                       
+                                        @foreach($cuisiniers as $cuisinier)
                                         <tr>
-                                            <td>{{ $admin->id }}</td>
-                                            <td>{{ $admin->name }}</td>
-                                            <td>{{ $admin->created_at }}</td>
-                                            <td><h5><span class="badge rounded-pill bg-success">Approuvé</span></h5></td>
+                                            <td>{{ $cuisinier->id }}</td>
+                                            <td>{{ $cuisinier->name }}</td>
+                                            <td>{{ $cuisinier->created_at }}</td>
+                                            
+                                            <td >
+                                                @if ($cuisinier->accept == 0)
+                                                     <h5><span class="badge rounded-pill bg-warning">En attent</span></h5>
+                                                @else  <h5><span class="badge rounded-pill bg-success">Approuvé</span></h5>
+                                                @endif
+                                                   
+                                                  
+                                              </td>
                                             
                                             <td>
-                                                
+                                                @if($cuisinier->accept == 0)
+                                                <a href="{{url('cuisiniers/validate/'.$cuisinier->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
+                                                  <i class="fas fa-check "> </i>
+                                                </a> 
+                                                @else  <a href=""  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle disabled ">
+                                                  <i class="fas fa-check"> </i>
+                                                </a> 
+                                                @endif
                                             <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
-                                                
                                             <i class="fas fa-trash"> </i>
                                             </td>
                                         </tr>

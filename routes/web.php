@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CuisinierController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ValidateController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +37,17 @@ Route::get('/home-dashboard-cuisinier', function () {
 Route::get('/admins', function () {
     return view('Admins');
 });
+
+Route::resource('cuisiniers', CuisinierController::class);
+Route::resource('admins', AdminController::class);
+
+Route::get('/IsAccept', function()
+{
+    return view('IsAccept');
+});
+Route::get('/IsRegister', function()
+{
+    return view('IsRegister');
+});
+
+Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);

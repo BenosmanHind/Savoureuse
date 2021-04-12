@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -33,6 +34,30 @@ class LoginController extends Controller
      *
      * @return void
      */
+    public function redirectTo(){
+        
+        $validate = Auth::user()->accept; 
+         if($validate == 0 ){
+            Auth()->logout();
+            return '/IsAccept';
+         }
+
+        
+        else {
+
+            $type = Auth::User()->type;
+            switch ($type) {
+                case 0:
+                        return '/home-dashboard-admin';
+                    break;
+                case 1:
+                        return '/home-dashboard-cuisinier';
+                    break; 
+
+        }
+    } 
+}
+      
     public function __construct()
     {
         $this->middleware('guest')->except('logout');

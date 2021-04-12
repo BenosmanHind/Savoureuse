@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -36,6 +37,19 @@ class RegisterController extends Controller
      *
      * @return void
      */
+    public function redirectTo(){
+        
+        //User role
+        $validate ="";
+        $validate = Auth::user()->accept; 
+         if($validate == 0 ){
+            Auth()->logout();
+            return '/IsRegister';
+         }
+
+        
+        
+}
     public function __construct()
     {
         $this->middleware('guest');
@@ -64,7 +78,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if($data['cuisinier'] == 1){
+        if($data['cuisinier'] == 'cuisinier'){
              return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -82,6 +96,7 @@ class RegisterController extends Controller
             'date_naissance' => $data['date_naissance'],
             'civilite' => $data['civilite'],
             'type' => 0,
+            'accept' => 1,
             'password' => Hash::make($data['password'])
             ]);
 

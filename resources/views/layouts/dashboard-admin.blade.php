@@ -134,16 +134,35 @@
                       
             
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link has-arrow waves-effect waves-dark sidebar-link active"  href="javascript:void(0)"
                                 aria-expanded="false">
-                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                               
                                 <span class="hide-menu">Gérer Comptes</span>
+                               
+                               
                             </a>
+                            <ul aria-expanded="false" class="collapse first-level in">
+                                <li class="sidebar-item active">
+                                    <a href="index.html" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                       
+                                        <span class="hide-menu"> Gerer admins</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="index2.html" class="sidebar-link">
+                                        <i class="mdi mdi-adjust"></i>
+                                        <span class="hide-menu"> Gerer Cuisinier</span>
+                                    </a>
+                                </li>
+
+                             </ul>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
                                 aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Gérer Recettes</span>
                             </a>
                         </li>
@@ -211,6 +230,7 @@
 <script src="dashboard/plugins/bower_components/chartist/dist/chartist.min.js"></script>
 <script src="dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
 <script src="dashboard/js/pages/dashboards/dashboard1.js"></script>
+
 </body>
 
 </html>
