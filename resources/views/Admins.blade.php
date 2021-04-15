@@ -70,13 +70,13 @@
                                             <td><h5><span class="badge rounded-pill bg-success">Approuvé</span></h5></td>
                                             
                                             <td>
-                                            <from action="{{url('admins/'.$admin->id)}}" method="post">
+                                            <form action="{{url('admins/'.$admin->id)}}" method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                             <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                                             <i class="fas fa-trash"> </i>
-                                            
-                                            </from>
+                                            </button>
+                                            </form>
                                                
                                             
                                              </td>

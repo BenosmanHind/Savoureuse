@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
 
@@ -15,10 +16,12 @@ class AdminController extends Controller
         $admins = User::where('type', 0)->get();
         return view('admins',compact('admins'));
    }
-   public function destroy(Request $request,$id)
-   {
-       $admin=Admin::find($id)
 
+
+   public function destroy($id)
+   {
+       $admin = User::find($id);
+       
        $admin->delete();
 
        return redirect('admins');

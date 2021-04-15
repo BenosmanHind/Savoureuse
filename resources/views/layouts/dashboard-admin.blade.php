@@ -163,6 +163,13 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Gérer Produits</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
+                                aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Gérer Recettes</span>
                             </a>
                         </li>
