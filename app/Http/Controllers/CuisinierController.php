@@ -15,4 +15,12 @@ class CuisinierController extends Controller
         $cuisiniers = User::where('type', 1)->get();
         return view('cuisiniers',compact('cuisiniers'));
    }
+   public function destroy($id)
+   {
+       $cuisinier = User::find($id);
+       
+       $cuisinier->delete();
+
+       return redirect('cuisiniers');
+   }
 }
