@@ -15,4 +15,12 @@ class AdminController extends Controller
         $admins = User::where('type', 0)->get();
         return view('admins',compact('admins'));
    }
+   public function destroy(Request $request,$id)
+   {
+       $admin=Admin::find($id)
+
+       $admin->delete();
+
+       return redirect('admins');
+   }
 }
