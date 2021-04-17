@@ -78,6 +78,10 @@
                                               </td>
                                             
                                             <td>
+                                                <form action="{{url('cuisiniers/'.$cuisinier->id)}}" method="post">
+                                                    {{csrf_field()}}
+                                                    {{method_field('DELETE')}}
+                                                    
                                                 @if($cuisinier->accept == 0)
                                                 <a href="{{url('cuisiniers/validate/'.$cuisinier->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
                                                   <i class="fas fa-check "> </i>
@@ -86,9 +90,7 @@
                                                   <i class="fas fa-check"> </i>
                                                 </a> 
                                                 @endif
-                                                <form action="{{url('cuisiniers/'.$cuisinier->id)}}" method="post">
-                                            {{csrf_field()}}
-                                            {{method_field('DELETE')}}
+                                                
                                             <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
                                             <i class="fas fa-trash"> </i>
                                             </form>
