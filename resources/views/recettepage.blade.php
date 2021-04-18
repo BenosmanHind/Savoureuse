@@ -45,7 +45,7 @@
                             <!--one-third-->
                             <article class="one-third">
                                 <dl class="basic">
-                                    <dt>Preparation time</dt>
+                                    <dt>Temps de préparations</dt>
                                     <dd>15 mins</dd>
                                     <dt>Cooking time</dt>
                                     <dd>30 mins</dd>
