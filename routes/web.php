@@ -50,4 +50,13 @@ Route::get('/IsRegister', function()
     return view('IsRegister');
 });
 
+Route::get('/recette', function()
+{
+    return view('recettepage');
+});
+Route::get('/recettes', function()
+{
+    return view('les_recettes');
+});
+
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
