@@ -160,7 +160,7 @@
                     
                     <!--respond-->
                     <div class="comment-respond" id="respond">
-                        <h2>Leave a reply</h2>
+                        <h2>Laisser une réponse</h2>
                         <div class="container">
                             <p><strong>Note:</strong> Les commentaires sur le site Web reflètent les opinions de leurs auteurs, et pas nécessairement celles du portail Internet Savoureuse. A demandé de s'abstenir d'insultes, de jurons et d'expressions vulgaires. Nous nous réservons le droit de supprimer tout commentaire sans préavis d'explications.</p>
                             <p>Votre adresse email ne sera pas publiée. Les champs obligatoires sont signés avec <span class="req">*</span></p>

@@ -42,12 +42,12 @@
                             <div class="f-row">
                                 <select>
                                     <option>ou selectionnez une catégorie</option>
-                                    <option>Apetizers</option>
+                                    <option>Apéritifs</option>
                                     <option>Cocktails</option>
-                                    <option>Deserts</option>
-                                    <option>Main courses</option>
+                                    <option>Déserts</option>
+                                    <option>Plats principaux</option>
                                     <option>Snacks</option>
-                                    <option>Soups</option>
+                                    <option>Soupes</option>
                                 </select>
                             </div>
                             <div class="f-row bwrap">
@@ -138,7 +138,7 @@
                         <!--//item-->
                     
                         <div class="cta">
-                            <a href="login.html" class="button big">Join us!</a>
+                            <a href="login.html" class="button big">Rejoignez-nous!</a>
                         </div>
                     </div>
                     <!--//row-->
@@ -155,20 +155,20 @@
                         <!--featured recipe-->
                         <div class="featured two-third">
                             <header class="s-title">
-                                <h2 class="ribbon">Recipe of the Day</h2>
+                                <h2 class="ribbon">Recette du jour</h2>
                             </header>
                             <article class="entry">
                                 <figure>
                                     <img src="Accueil/images/img.jpg" alt="" />
-                                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                                 </figure>
                                 <div class="container">
                                     <h2><a href="recipe.html">Honey Cake</a></h2>
                                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
                                     <div class="actions">
                                         <div>
-                                            <a href="#" class="button">See the full recipe</a>
-                                            <div class="more"><a href="recipes2.html">See past recipes of the day</a></div>
+                                            <a href="#" class="button">Voir la recette complète</a>
+                                            <div class="more"><a href="recipes2.html">Voir les recettes du jour  passées</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -179,20 +179,20 @@
                         <!--featured member-->
                         <div class="featured one-third">
                             <header class="s-title">
-                                <h2 class="ribbon star">Featured member</h2>
+                                <h2 class="ribbon star">Membre en vedette</h2>
                             </header>
                             <article class="entry">
                                 <figure>
                                     <img src="Accueil/images/avatar.jpg" alt="" />
-                                    <figcaption><a href="my_profile.html"><i class="icon icon-themeenergy_eye2"></i> <span>View member</span></a></figcaption>
+                                    <figcaption><a href="my_profile.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir le membre</span></a></figcaption>
                                 </figure>
                                 <div class="container">
                                     <h2><a href="my_profile.html">Kimberly C.</a></h2>
                                     <blockquote><i class="fa fa-quote-left"></i>Traditional dishes and fine bakery products accompanied by beautiful photographs to bend around and attract the tryout! Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</blockquote>
                                     <div class="actions">
                                         <div>
-                                            <a href="#" class="button">Check out her recipes</a>
-                                            <div class="more"><a href="#">See past featured members</a></div>
+                                            <a href="#" class="button">Voir les recettes du jour  passées</a>
+                                            <div class="more"><a href="#">Voir les anciens membres vedettes</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -216,7 +216,7 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img.png" alt="" />
-                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
                                 <h2><a href="recipe.html">Tourte aux poulet</a></h2> 
@@ -235,7 +235,7 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img1.png" alt="" />
-                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
                                 <h2><a href="recipe.html">Lasagne végétarienne</a></h2> 
@@ -254,7 +254,7 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img2.png" alt="" />
-                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
                                 <h2><a href="recipe.html">Gratin de pomme de terre </a></h2> 
@@ -273,7 +273,7 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img1.png" alt="" />
-                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
                                 <h2><a href="recipe.html">Lasagne végétarienne</a></h2> 
@@ -292,7 +292,7 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img2.png" alt="" />
-                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
                                 <h2><a href="recipe.html">Gratin de pomme de terre </a></h2> 
@@ -311,7 +311,7 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img.png" alt="" />
-                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>View recipe</span></a></figcaption>
+                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
                                 <h2><a href="recipe.html">Tourte aux poulet</a></h2> 
@@ -327,8 +327,8 @@
                         <!--item-->
                         
                         <div class="quicklinks">
-                            <a href="#" class="button">More recipes</a>
-                            <a href="javascript:void(0)" class="button scroll-to-top">Back to top</a>
+                            <a href="#" class="button">Plus de recette</a>
+                            <a href="javascript:void(0)" class="button scroll-to-top">Retour au sommet</a>
                         </div>
                     </div>
                     <!--//entries-->
@@ -338,7 +338,7 @@
                 <!--cwrap-->
                 <div class="cwrap">
                     <header class="s-title">
-                        <h2 class="ribbon bright">Latest articles</h2>
+                        <h2 class="ribbon bright">Dernier article</h2>
                     </header>
                     <!--entries-->
                     <div class="entries row">
@@ -346,10 +346,10 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img.png" alt="" />
-                                <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>View post</span></a></figcaption>
+                                <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir l'article</span></a></figcaption>
                             </figure>
                             <div class="container">
-                                <h2><a href="blog_single.html">Barbeque party</a></h2> 
+                                <h2><a href="blog_single.html">Tourte aux poulet</a></h2> 
                                 <div class="actions">
                                     <div>
                                         <div class="date"><i class="fa fa-calendar"></i><a href="#">22 Dec 2014</a></div>
@@ -367,10 +367,10 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img2.png" alt="" />
-                                <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>View post</span></a></figcaption>
+                                <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir l'article</span></a></figcaption>
                             </figure>
                             <div class="container">
-                                <h2><a href="blog_single.html">How to make sushi</a></h2> 
+                                <h2><a href="blog_single.html">Gratin de pomme de terre</a></h2> 
                                 <div class="actions">
                                     <div>
                                         <div class="date"><i class="fa fa-calendar"></i><a href="#">22 Dec 2014</a></div>
@@ -388,10 +388,10 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img1.png" alt="" />
-                                <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>View post</span></a></figcaption>
+                                <figcaption><a href="blog_single.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir l'article</span></a></figcaption>
                             </figure>
                             <div class="container">
-                                <h2><a href="blog_single.html">Make your own bread</a></h2> 
+                                <h2><a href="blog_single.html">Lasagne végétarienne</a></h2> 
                                 <div class="actions">
                                     <div>
                                         <div class="date"><i class="fa fa-calendar"></i><a href="#">22 Dec 2014</a></div>
@@ -406,8 +406,8 @@
                         <!--item-->
                         
                         <div class="quicklinks">
-                            <a href="#" class="button">More posts</a>
-                            <a href="javascript:void(0)" class="button scroll-to-top">Back to top</a>
+                            <a href="#" class="button">Plus de messages</a>
+                            <a href="javascript:void(0)" class="button scroll-to-top">Retour au sommet</a>
                         </div>
                     </div>
                     <!--//entries-->
@@ -452,11 +452,11 @@
          
                     
                 <div class="widget members">
-                    <h3>Our members</h3>
+                    <h3>Nos membres</h3>
                     <div id="members-list-options" class="item-options">
-                      <a href="#">Newest</a>
+                      <a href="#">Récent</a>
                       <a class="selected" href="#">Active</a>
-                      <a href="#">Popular</a>
+                      <a href="#">Populaire</a>
                     </div>
                     <ul class="boxed">
                         <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Kimberly C.</span></a></div></li>
