@@ -33,13 +33,14 @@
           </div>
 
           <div class="f-row">
-            <input type="date" placeholder="Entrer votre  date de naissance" class="form-control @error('date_naissance') is-invalid @enderror" name="date_naissance"  required  />
+            <input type="date" placeholder="Entrer votre  date de naissance" class="form-control @error('date_naissance') is-invalid @enderror" style="font-size:13px;"name="date_naissance"  required  />
             @error('date_naissance')
                <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
                </span>
             @enderror
           </div>
+          
 
           <div class="f-row">
             <input type="text" placeholder="Entrer la civilité" class="form-control @error('civilite') is-invalid @enderror" name="civilite"  required  />
@@ -64,13 +65,18 @@
           </div>
           <div class="f-row">
             <input  type="hidden" class="form-control" name="cuisinier"  value = 'cuisinier'>
-
           </div>
-          <div class="f-row bwrap">
+            
+
+         
+          <div class="f-row bwrap ">
             <input type="submit" value="register" />
           </div>
+         
+            <p>Already have an account yet? <a href="login.html">Log in.</a></p>
 
-          <p>Already have an account yet? <a href="login.html">Log in.</a></p>
+          
+          
         </div>
       </section>
       <!--//content-->

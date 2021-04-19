@@ -8,12 +8,14 @@
 	<meta name="author" content="themeenergy.com">
 	
 	<title>Savoureuse</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 	
 	<link rel="stylesheet" href="Accueil/css/style.css" />
 	<link rel="stylesheet" href="Accueil/css/icons.css" />
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
 	<link rel="shortcut icon" href="Accueil/images/favicon.ico" />
+	
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +24,7 @@
 	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body class="home">
+<body>
 	<!--preloader-->
 	<div class="preloader">
 		<div class="spinner"></div>
