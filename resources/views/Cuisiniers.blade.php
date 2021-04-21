@@ -1,12 +1,7 @@
 @extends('layouts.dashboard-admin')
 @section('content')
 
-<style>
-    .fas {
-    font-size: 11px;
-}
 
-    </style>
    
        
         <!-- ============================================================== -->
@@ -70,8 +65,8 @@
                                             
                                             <td >
                                                 @if ($cuisinier->accept == 0)
-                                                     <h5><span class="badge rounded-pill bg-warning">En attent</span></h5>
-                                                @else  <h5><span class="badge rounded-pill bg-success">Approuvé</span></h5>
+                                                     <h5><span class="badge bg-warning text-dark">En attent</span></h5>
+                                                @else  <h5><span class="badge bg-success">Approuvé</span></h5>
                                                 @endif
                                                    
                                                   
@@ -83,16 +78,16 @@
                                                     {{method_field('DELETE')}}
                                                     
                                                 @if($cuisinier->accept == 0)
-                                                <a href="{{url('cuisiniers/validate/'.$cuisinier->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle ">
+                                                <a href="{{url('cuisiniers/validate/'.$cuisinier->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success  ">
                                                   <i class="fas fa-check "> </i>
                                                 </a> 
-                                                @else  <a href=""  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success btn-circle disabled ">
-                                                  <i class="fas fa-check"> </i>
+                                                @else  <a href=""   class="btn btn-success  disabled ">
+                                                  <i class="fas fa-check" style="color:#ffff;"> </i>
                                                 </a> 
                                                 @endif
                                                 
-                                            <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
-                                            <i class="fas fa-trash"> </i>
+                                            <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
+                                            <i class="fas fa-trash" style="color:#ffff;"> </i>
                                             </form>
                                             </td>
                                         </tr>

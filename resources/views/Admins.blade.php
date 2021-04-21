@@ -73,7 +73,7 @@
                                             <form action="{{url('admins/'.$admin->id)}}" method="post">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
-                                            <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger btn-circle">
+                                            <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
                                             <i class="fas fa-trash"> </i>
                                             </button>
                                             </form>

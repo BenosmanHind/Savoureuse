@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CuisinierController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ValidateController;
+use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\CategorieController;
 
 
 /*
@@ -58,5 +60,15 @@ Route::get('/recettes', function()
 {
     return view('les_recettes');
 });
+
+Route::get('/detail', function()
+{
+    return view('detail_cuisinier');
+});
+
+
+
+Route::resource('categorie', CategorieController::class);
+Route::resource('produit', ProduitController::class);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
