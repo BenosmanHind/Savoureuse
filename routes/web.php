@@ -66,6 +66,11 @@ Route::get('/detail', function()
     return view('detail_cuisinier');
 });
 
+Route::get('/addrecette', function()
+{
+    return view('addrecette');
+});
+
 
 
 Route::resource('categorie', CategorieController::class);
