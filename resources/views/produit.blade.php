@@ -94,7 +94,7 @@
                                     <td>{{ $produit->created_at }}</td>
                                 
                                     <td>
-                                    <form action="{{url('produits/'.$produit->id)}}" method="post">
+                                    <form action="{{url('produit/'.$produit->id)}}" method="post">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <a href=""  class="btn btn-warning  ">
