@@ -77,3 +77,4 @@ Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
+Route::get('produit/{$id}/edit','ProduitController@edit');

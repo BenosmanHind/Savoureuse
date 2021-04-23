@@ -34,20 +34,25 @@
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="white-box">
-                <h1> <span class="badge bg-secondary">Information</span></h1>
-                <h3><strong> Nom:</strong></h3>
-                <h3><strong> Email:</strong> </span></h3>
-                <h3><strong>  Date de Naissance:</strong> </h3>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
                 
-                    
-                </div>
                 <div class="white-box">
-                <h1> <span class="badge bg-secondary">Recette</span></h1>
-                
-                    
+                     <form role="form"  method="POST" action="{{url('produit'.$produit->id)}}" enctype="multipart/form-data">
+                     <input type="hidden" name="_method" value="PUT">
+                        @csrf
+                    <div class="mb-3 col-md-12 ">
+                        <label for="exampleFormControlInput1" class="form-label">Nom de produit</label>
+                        <input type="text"  id="exampleFormControlInput1" placeholder="Entrer le nom "  class="form-control @error('name') is-invalid @enderror" name="name"  required value="{{$produit->name}}" />
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                      </div>
+                      
+                        <button type="submit" class="btn btn-danger pl-4 pr-4 float-right">Modifier</button>
+                    </form> 
                 </div>
             </div>
         </div>
@@ -61,7 +66,10 @@
         <!-- ============================================================== -->
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
+        
+                               
+                                    
+                              
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+
 @endsection

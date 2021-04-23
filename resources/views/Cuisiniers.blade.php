@@ -73,11 +73,13 @@
                                               </td>
                                             
                                             <td>
+                                            
                                                 <form action="{{url('cuisiniers/'.$cuisinier->id)}}" method="post">
                                                     {{csrf_field()}}
                                                     {{method_field('DELETE')}}
                                                     
-                                                @if($cuisinier->accept == 0)
+                        
+                                                    @if($cuisinier->accept == 0)
                                                 <a href="{{url('cuisiniers/validate/'.$cuisinier->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success  ">
                                                   <i class="fas fa-check "> </i>
                                                 </a> 
@@ -85,12 +87,16 @@
                                                   <i class="fas fa-check" style="color:#ffff;"> </i>
                                                 </a> 
                                                 @endif
-                                            <button type="submit"  class="btn btn-warning ">
+                                                <button type="submit"  class="btn btn-warning ">
+                                                   
                                                     <i class="fas fa-eye" > </i>
+                                                    
                                             </button>
                                             <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
                                             <i class="fas fa-trash" style="color:#ffff;"> </i>
+                                            
                                             </form>
+                                            
                                             </td>
                                         </tr>
                                         @endforeach

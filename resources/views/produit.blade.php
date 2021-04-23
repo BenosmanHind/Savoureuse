@@ -94,12 +94,13 @@
                                     <td>{{ $produit->created_at }}</td>
                                 
                                     <td>
-                                    <form action="" method="post">
+                                    <form action="{{url('produits/'.$produit->id)}}" method="post">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <a href=""  class="btn btn-warning  ">
                                         <i class="far fa-edit" > </i>
                                       </a> 
+                                      
                                     <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
                                     <i class="fas fa-trash" style="color:#ffff;"> </i>
                                     </button>

@@ -24,4 +24,25 @@ class ProduitController extends Controller
 
           return Redirect::back();
     }
+    public function edit($id)
+    {
+        $produit = Produit::find($id);
+        return view ('edit',['produit'=>$produit]);
+
+
+    }
+    public function update(Request $request,$id)
+    {
+        $produit = Produit::find($id);
+        $produit->name=$request->input('name');
+        $produit->save();
+    }
+    public function destroy($id)
+    {
+        $produit = Produit::find($id);
+        
+        $produit->delete();
+ 
+        return redirect('produit');
+    }
 }
