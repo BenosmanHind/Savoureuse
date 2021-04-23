@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ValidateController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\RecetteController;
 
 
 /*
@@ -75,6 +76,7 @@ Route::get('/addrecette', function()
 
 Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
+Route::resource('addrecette', RecetteController::class);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
 Route::get('produit/{$id}/edit','ProduitController@edit');
