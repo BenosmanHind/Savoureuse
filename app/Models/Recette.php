@@ -18,4 +18,9 @@ class Recette extends Model
 
         return $this->hasMany(Ingredient::class);
     }
+
+    public function categorie(){
+        
+        return $this->belongsTo(Categorie::class);
+    }
 }
