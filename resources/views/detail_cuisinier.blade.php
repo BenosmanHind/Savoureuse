@@ -35,15 +35,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="white-box">
-                <h1> <span class="badge bg-secondary">Information</span></h1>
-                <h3><strong> Nom:</strong></h3>
-                <h3><strong> Email:</strong> </span></h3>
-                <h3><strong>  Date de Naissance:</strong> </h3>
+            
+
+                <h2>  <span class="badge bg-danger">Information</span></h2>
+                <h5><b> Nom:</b> </h5>
+                <h5><b> Email:</b> </span></h5>
+                <h5><b>  Date de Naissance:</b> </h5>
                 
                     
                 </div>
                 <div class="white-box">
-                <h1> <span class="badge bg-secondary">Recette</span></h1>
+                <h2> <span class="badge bg-danger">Recette</span></h2>
                 
                     
                 </div>
@@ -55,8 +57,7 @@
         <!-- ============================================================== -->
         <!-- Right sidebar -->
         <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
+        <!-- .right-sidebar -->        <!-- ============================================================== -->
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
     </div>

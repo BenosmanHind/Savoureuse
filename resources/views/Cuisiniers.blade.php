@@ -87,11 +87,12 @@
                                                   <i class="fas fa-check" style="color:#ffff;"> </i>
                                                 </a> 
                                                 @endif
-                                                <button type="submit"  class="btn btn-warning ">
-                                                   
-                                                    <i class="fas fa-eye" > </i>
-                                                    
-                                            </button>
+                                          <a herf="{{url('cuisiniers/'.$cuisinier->id.'/detail')}}" class="btn btn-warning ">
+                                          <i class="fas fa-eye" > </i>
+                                          </a>
+                                           
+                                          
+                                           
                                             <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
                                             <i class="fas fa-trash" style="color:#ffff;"> </i>
                                             

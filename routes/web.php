@@ -9,6 +9,8 @@ use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CategorieController;
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -77,4 +79,7 @@ Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
+
+
+
 

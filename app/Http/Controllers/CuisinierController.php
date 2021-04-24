@@ -23,4 +23,5 @@ class CuisinierController extends Controller
 
        return redirect('cuisiniers');
    }
+  
 }

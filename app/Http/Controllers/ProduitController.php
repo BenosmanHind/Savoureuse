@@ -27,17 +27,19 @@ class ProduitController extends Controller
     public function edit($id)
     {
         $produit = Produit::find($id);
-        return view ('edit',compact('produit'));
+        return view ('edit',['produit'=>$produit]);
+
 
 
     }
-    public function update(Request $request,$id)
-    {
-        $produit = Produit::find($id);
-        $produit->name=$request->input('name');
-        $produit->save();
-        return redirect()->route('produit.index');
+    public function update(Request $request, $id){
+    	$produit = Produit::find($id);
+    	$produit->name = $request->input('name');
+    	
+    	$produit->save();
+    	return redirect('produit');    	
     }
+
     public function destroy($id)
     {
         $produit = Produit::find($id);
