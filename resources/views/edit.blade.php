@@ -41,9 +41,11 @@
                      <form role="form"  method="POST" action="{{url('produit'.$produit->id)}}" enctype="multipart/form-data">
                      <input type="hidden" name="_method" value="PUT">
                         @csrf
+                       
+                {{ method_field('PATCH') }}
                     <div class="mb-3 col-md-12 ">
                         <label for="exampleFormControlInput1" class="form-label">Nom de produit</label>
-                        <input type="text"  id="exampleFormControlInput1" placeholder="Entrer le nom "  class="form-control @error('name') is-invalid @enderror" name="name"  required value="{{$produit->name}}" />
+                        <input type="text"  id="exampleFormControlInput1" placeholder="Entrer le nom "  class="form-control @error('name') is-invalid @enderror" name="name"  required value="{{ old('name', $produit->name) }}"/>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

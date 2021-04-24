@@ -27,7 +27,7 @@ class ProduitController extends Controller
     public function edit($id)
     {
         $produit = Produit::find($id);
-        return view ('edit',['produit'=>$produit]);
+        return view ('edit',compact('produit'));
 
 
     }
@@ -36,6 +36,7 @@ class ProduitController extends Controller
         $produit = Produit::find($id);
         $produit->name=$request->input('name');
         $produit->save();
+        return redirect()->route('produit.index');
     }
     public function destroy($id)
     {

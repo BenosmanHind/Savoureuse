@@ -94,10 +94,10 @@
                                     <td>{{ $produit->created_at }}</td>
                                 
                                     <td>
-                                    <form action="{{url('produit/'.$produit->id)}}" method="post">
+                                    <form action="{{url('produits/'.$produit->id)}}" method="post">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
-                                    <a href=""  class="btn btn-warning  ">
+                                    <a href="{{route('produit.edit' ,['produit' => $produit->id])}}"  class="btn btn-warning  ">
                                         <i class="far fa-edit" > </i>
                                       </a> 
                                       
