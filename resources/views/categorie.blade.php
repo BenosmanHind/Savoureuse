@@ -92,9 +92,12 @@
                                     <td>{{ $categorie->id }}</td>
                                     <td>{{ $categorie->name }}</td>
                                     <td>{{ $categorie->created_at }}</td>
+
+
                                 
                                     <td>
-                                    <form action="" method="post">
+                                    <form action="{{url('categorie/'.$categorie->id)}}" method="post">
+
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <a href=""  class="btn btn-warning  ">

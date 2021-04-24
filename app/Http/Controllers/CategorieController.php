@@ -23,4 +23,13 @@ class CategorieController extends Controller
            $categorie->save();
            return Redirect::back();
      }
+
+     public function destroy($id)
+    {
+        $categorie = Categorie::find($id);
+        
+        $categorie->delete();
+ 
+        return redirect('categorie');
+    }
 }
