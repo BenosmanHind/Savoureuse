@@ -37,21 +37,23 @@
                 <div class="white-box">
             
 
-                <h2>  <span class="badge bg-danger">Information</span></h2>
-                <h5><b> Nom:</b> </h5>
-                
-                <h5><b> Email:</b> </span></h5>
-                <h5><b>  Date de Naissance:</b> </h5>
+                <h3>  <span class="badge bg-primary">Infomation Personnelle</span></h2>
+                <h5><b> Nom:  </b>    {{ $cuisinier->name }} </h5>
+                <h5><b> Email:  </b>   {{ $cuisinier->email }} </span></h5>
+                <h5><b>  Date de Naissance:  </b>   {{ $cuisinier->date_naissance}} </h5>
                 
                     
                 
-               
-                <h2> <span class="badge bg-danger">Recette</span></h2>
-                
+                <h3> <span class="badge bg-primary">Recette</span></h2>
                     
                 </div>
             </div>
+
         </div>
+        
+                
+               
+               
         <!-- ============================================================== -->
         <!-- End PAge Content -->
         <!-- ============================================================== -->
