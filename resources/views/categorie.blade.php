@@ -9,16 +9,14 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Blank Page</h4>
+                <h4 class="page-title">Les Catégories</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ms-auto">
                         <li><a href="#" class="fw-normal">Dashboard</a></li>
                     </ol>
-                    <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
-                        class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Upgrade
-                        to Pro</a>
+                   
                 </div>
             </div>
         </div>
@@ -100,7 +98,7 @@
 
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
-                                    <a href=""  class="btn btn-warning  ">
+                                    <a href="{{url('categorie/'.$categorie->id.'/edit')}}"  class="btn btn-warning  ">
                                         <i class="far fa-edit"> </i>
                                       </a> 
                                     <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">

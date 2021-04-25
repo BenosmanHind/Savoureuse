@@ -24,6 +24,24 @@ class CategorieController extends Controller
            return Redirect::back();
      }
 
+     public function edit($id){
+
+     $categorie = Categorie::find($id);
+     
+      return view('edit_categorie',compact('categorie'));
+     }
+
+     public function update(Request $request, $id){
+      
+        $categorie = Categorie::find($id);
+        $categorie->name = $request['name']; 
+        $categorie->save();
+
+        return redirect('categorie');
+     }
+
+
+
      public function destroy($id)
     {
         $categorie = Categorie::find($id);

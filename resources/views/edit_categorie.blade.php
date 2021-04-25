@@ -9,7 +9,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Blank Page</h4>
+                <h4 class="page-title">Modifier Catégorie</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -32,23 +32,25 @@
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+                
                 <div class="white-box">
-            
-
-                <h2>  <span class="badge bg-danger">Information</span></h2>
-                <h5><b> Nom:</b> </h5>
-                
-                <h5><b> Email:</b> </span></h5>
-                <h5><b>  Date de Naissance:</b> </h5>
-                
-                    
-                
-               
-                <h2> <span class="badge bg-danger">Recette</span></h2>
-                
-                    
+                    <form role="form"  method="POST" action="{{url('categorie/'.$categorie->id)}}" enctype="multipart/form-data">
+                        <input type="hidden" name="_method" value="PUT">
+                        @csrf
+                    <div class="mb-3 col-md-12 ">
+                        <label for="exampleFormControlInput1" class="form-label">Nom de catégorie</label>
+                        <input type="text"  id="exampleFormControlInput1" placeholder="Entrer le nom "  class="form-control @error('name') is-invalid @enderror" name="name" value="{{$categorie->name}}" required  />
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                      </div>
+                      
+                        <button type="submit" class="btn btn-warning pl-4 pr-4 float-right">Modifier</button>
+                    </form> 
                 </div>
             </div>
         </div>
@@ -58,10 +60,12 @@
         <!-- ============================================================== -->
         <!-- Right sidebar -->
         <!-- ============================================================== -->
-        <!-- .right-sidebar -->        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
+
+        
     </div>
-    <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+
 @endsection

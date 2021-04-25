@@ -63,20 +63,15 @@ Route::get('/recettes', function()
     return view('les_recettes');
 });
 
-Route::get('/detail', function()
-{
-    return view('detail_cuisinier');
-});
-
 Route::get('/addrecette', function()
 {
     return view('addrecette');
 });
 
-
-
 Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
+
+Route::get('/cuisinierdetail/{id}', [App\Http\Controllers\CuisinierController::class, 'detail']);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
 

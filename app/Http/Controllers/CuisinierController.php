@@ -23,11 +23,14 @@ class CuisinierController extends Controller
 
        return redirect('cuisiniers');
    }
-   public function deta($id){
 
-    $cuisiniers = User::where('type', 1)->get();
+   public function detail($id){
+
     $cuisinier = User::find($id);
-    return view('detail');
+    
+    
+    return view('detail_cuisinier',['cuisinier'=>$cuisinier]);
+
    
 
 }
