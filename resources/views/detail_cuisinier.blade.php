@@ -39,6 +39,7 @@
 
                 <h2>  <span class="badge bg-danger">Information</span></h2>
                 <h5><b> Nom:</b> </h5>
+                
                 <h5><b> Email:</b> </span></h5>
                 <h5><b>  Date de Naissance:</b> </h5>
                 

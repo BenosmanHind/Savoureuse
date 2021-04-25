@@ -87,7 +87,7 @@
                                                   <i class="fas fa-check" style="color:#ffff;"> </i>
                                                 </a> 
                                                 @endif
-                                          <a herf="{{url('cuisiniers/'.$cuisinier->id.'/detail')}}" class="btn btn-warning ">
+                                          <a herf="{{url('cuisiniers/'.$cuisinier->id.'/deta')}}" class="btn btn-warning ">
                                           <i class="fas fa-eye" > </i>
                                           </a>
                                            
