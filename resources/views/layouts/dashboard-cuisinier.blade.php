@@ -16,10 +16,12 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="dashboard/plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="dashboard/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="{{ asset('dashboard/plugins/bower_components/chartist/dist/chartist.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css') }}">
     <!-- Custom CSS -->
-    <link href="dashboard/css/style.min.css" rel="stylesheet">
+    <link href="{{ asset('dashboard/css/style.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link href="{{ asset('dashboard/css/style-added.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -50,13 +52,13 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="dashboard/plugins/images/logo-icon.png" alt="homepage" />
+                            <img src="{{ asset('dashboard/plugins/images/logo-icon.png') }}" alt="homepage" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="dashboard/plugins/images/logo-text.png" alt="homepage" />
+                            <img src="{{ asset('dashboard/plugins/images/logo-text.png') }}" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -94,7 +96,7 @@
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="dashboard/plugins/images/users/varun.jpg" alt="user-img" width="36"
+                                <img src="{{ asset('dashboard/plugins/images/users/varun.jpg') }}" alt="user-img" width="36"
                                     class="img-circle"><span class="text-white font-medium">Steave</span></a>
                         </li>
                         <!-- ============================================================== -->
@@ -183,22 +185,23 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="dashboard/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{ asset('dashboard/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap tether Core JavaScript -->
-<script src="dashboard/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="dashboard/js/app-style-switcher.js"></script>
-<script src="dashboard/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<script src="{{ asset('dashboard/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('dashboard/js/app-style-switcher.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 <!--Wave Effects -->
-<script src="dashboard/js/waves.js"></script>
+<script src="{{ asset('dashboard/js/waves.js') }}"></script>
 <!--Menu sidebar -->
-<script src="dashboard/js/sidebarmenu.js"></script>
+<script src="{{ asset('dashboard/js/sidebarmenu.js') }}"></script>
 <!--Custom JavaScript -->
-<script src="dashboard/js/custom.js"></script>
+<script src="{{ asset('dashboard/js/custom.js') }}"></script>
 <!--This page JavaScript -->
 <!--chartis chart-->
-<script src="dashboard/plugins/bower_components/chartist/dist/chartist.min.js"></script>
-<script src="dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-<script src="dashboard/js/pages/dashboards/dashboard1.js"></script>
+<script src="{{ asset('dashboard/plugins/bower_components/chartist/dist/chartist.min.js') }}"></script>
+<script src="{{ asset('dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
+<script src="{{ asset('dashboard/js/pages/dashboards/dashboard1.js') }}"></script>
+<script src="{{ asset('dashboard/js/js-added.js') }}"></script>
 </body>
 
 </html>

@@ -14,4 +14,9 @@ class Ingredient extends Model
         return $this->belongsTo(Recette::class);
     }
 
+    public function produit(){
+        
+        return $this->belongsTo(Produit::class);
+    }
+
 }

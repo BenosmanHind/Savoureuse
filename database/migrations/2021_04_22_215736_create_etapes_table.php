@@ -16,7 +16,6 @@ class CreateEtapesTable extends Migration
         Schema::create('etapes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('recette_id')->unsigned();
-            $table->Integer('numero');
             $table->string('description');
             $table->foreign('recette_id')->references('id')->on('recettes')->onDelete('cascade');
             $table->timestamps();

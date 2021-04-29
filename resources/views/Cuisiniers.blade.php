@@ -88,7 +88,7 @@
                                                 </a> 
                                                 @endif
                                           <a href="{{url('cuisinierdetail/'.$cuisinier->id)}}" class="btn btn-warning ">
-                                          <i class="fas fa-eye" > </i>
+                                          <i class="fas fa-eye" style="color:#ffff;"> </i>
                                           </a>
                                            
                                           

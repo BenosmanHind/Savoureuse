@@ -9,7 +9,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Blank Page</h4>
+                <h4 class="page-title">Détaille Cuisinier</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -36,19 +36,38 @@
             <div class="col-md-12">
                 <div class="white-box">
             
+                    <div class="container">
 
-                <h3>  <span class="badge bg-primary">Infomation Personnelle</span></h2>
-                <h5><b> Nom:  </b>    {{ $cuisinier->name }} </h5>
-                <h5><b> Email:  </b>   {{ $cuisinier->email }} </span></h5>
-                <h5><b>  Date de Naissance:  </b>   {{ $cuisinier->date_naissance}} </h5>
+                        <h3 class="box-title mt-3 text-center">Les Détails D'un Cuisinier</h3>
+                        <div class="container">
+                        <div class="row">
+                        
+                        <div class="col-md-4">
+                        <h5><span class="badge bg-primary">Nom Et Prenom :</span></h5> 
+                        <p> {{$cuisinier->name }}</p>
+                        </div>
+
+                        <div class="col-md-4">
+                        <h5><span class="badge bg-primary">Email:</span></h5> 
+                        <p> {{$cuisinier->email }}</p>
+                        </div>
+
+                        <div class="col-md-4">
+                        <h5><span class="badge bg-primary">Date De Naissance:</span></h5> 
+                        <p> {{$cuisinier->date_naissance }}</p>
+                        </div>
+                        </div>
+                        </div>
+                
                 
                     
                 
-                <h3> <span class="badge bg-primary">Recette</span></h2>
+                <h3 class="box-title mt-3 text-center">Ses Recettes</h3>
                     
                 </div>
+           
             </div>
-
+        </div>
         </div>
         
                 
@@ -63,6 +82,7 @@
         <!-- .right-sidebar -->        <!-- ============================================================== -->
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
+       
     </div>
     <!-- ============================================================== -->
     <!-- End Container fluid  -->

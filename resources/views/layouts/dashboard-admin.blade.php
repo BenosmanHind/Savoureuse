@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="{{ asset('dashboard/css/style.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
+    <link href="{{ asset('dashboard/css/style-added.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -237,6 +239,7 @@
 <script src="{{ asset('dashboard/plugins/bower_components/chartist/dist/chartist.min.js') }}"></script>
 <script src="{{ asset('dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
 <script src="{{ asset('dashboard/js/pages/dashboards/dashboard1.js') }}"></script>
+<script src="{{ asset('dashboard/js/js-added.js') }}"></script>
 
 </body>
 

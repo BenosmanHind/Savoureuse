@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ValidateController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\RecetteController;
 
 
 
@@ -63,15 +64,23 @@ Route::get('/recettes', function()
     return view('les_recettes');
 });
 
-Route::get('/addrecette', function()
+Route::get('/profil-admin', function()
 {
-    return view('addrecette');
+    return view('profil-admin');
+});
+Route::get('/profil-cuisinier', function()
+{
+    return view('profil-cuisinier');
 });
 
+
+Route::resource('addrecette', RecetteController::class);
 Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
 
 Route::get('/cuisinierdetail/{id}', [App\Http\Controllers\CuisinierController::class, 'detail']);
+Route::get('/mes_recettes', [App\Http\Controllers\RecetteController::class, 'list_recette']);
+Route::get('/recettes_admin', [App\Http\Controllers\RecetteController::class, 'list_recette_admin']);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
 

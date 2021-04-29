@@ -10,7 +10,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Blank Page</h4>
+                <h4 class="page-title">Ajouter Recette</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -23,139 +23,143 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Bread crumb and right sidebar toggle -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Container fluid  -->
-    <!-- ============================================================== -->
+   
     <div class="container-fluid">
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-12">
-                
-                <div class="white-box">
-                    <form role="form"  method="POST" action="" enctype="multipart/form-data">
-                        @csrf
-                    <div class="mb-3 col-md-8 ">
-                        <label for="exampleFormControlInput1" class="form-label">Ingrédient 
-                            <button type="submit"  class="btn btn-primary ">
-                                <i class="fas fa-plus" style="color:#ffff;"> </i>
-                            </button>
-                        </label>
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-box">
+                <div class="container">
+                    <form class="form-group" action="" method="post" id="form-recette">
+                    @csrf
+                        <!-- Destails section -->
+                        <h3 class="box-title">Détails</h3>
+                        <p>Merci de remplir les details de votre recette</p>
+                        
                         <div class="row">
-                      <div class="col-md-6">
-                        <input  type="text"  id="exampleFormControlInput1" placeholder="Entrer la quantite "  class="form-control @error('quantite') is-invalid @enderror" name="quantite"  required  />
-                      </div>
-                       <div class="col-md-6">
-                        <input  type="text"  id="exampleFormControlInput1" placeholder="Entrer l'unite "  class="form-control @error('unite') is-invalid @enderror" name="unite"  required  />
-                       </div>
-                        <div class="col-md-6">
-                             <select @error('produits') is-invalid @enderror name="produits[]" multiple class="form-control">
-                               @foreach ($produits as $produit)
-                                <option value="{{$produit->id}}">{{$produit->name}}</option>
+                            <div class="col-md-3">
+                                <label >Titre</label>
+                                <input type="string" class="form-control" name='titre' placeholder="Description">
+                            </div>
+                            <div class="col-md-3">
+                                <label >Categorie</label>
+                                <select name="categorie" class="custom-select" >
+                                    @foreach ($categories as $categorie)
+                                    <option value="{{$categorie->id}}">{{$categorie->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label >Temps de preparation</label>
+                                <select class="custom-select" name='temps_preparation'>
+                                <option>plus 30 min</option>
+                                <option>plus 1h </option>
+                                <option>plus 2h </option>
+                                <option>plus 3h </option>
+                                <option>plus 4h</option>
+                               
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-md-3">
+                                <label >Temps de cuisson</label>
+                                <select class="custom-select" name='temps_cuisson' >
+                                <option>moins 15 min</option>
+                                <option>moins 20min</option>
+                                <option>moins 30min</option>
+                                <option>moins 45min</option>
+                                <option>moins 1h</option>
+                                <option>plus 1h</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label >Difficulté</label>
+                                <select class="custom-select" name='difficulte' >
+                                <option>Facile</option>
+                                <option>Moyen</option>
+                                <option>Dificile</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label >Coût</label>
+                                <select class="custom-select" name='cout'>
+                                <option>Pas chèr</option>
+                                <option>Chèr</option>
+                                <option>Assez chèr</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Ingredients section -->
+                        <h3 class="box-title mt-3">Ingrédients</h3>
+                        <p>Merci de fournir les ingridients avec les informations</p>
+                        <div class="ingredient-section">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Produit</label>
+                                    <select name="produits" class="custom-select">
+                                        @foreach ($produits as $produit)
+                                <option value={{$produit->id}}>{{$produit->name}}</option>
                                  
                                         
                                 @endforeach
-                                    
-                                </select>
+                                
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label>Quantité</label>
+                                    <input type="number" class="form-control" placeholder="00" name='quantite'>
+                                </div>
+                                <div class=" col-md-2">
+                                    <label >Unité</label>
+                                    <select class="custom-select" name='unite'>
+                                    <option>Grs</option>
+                                    <option>Litre</option>
+                                    </select>
+                                </div>
+                                <div class="d-flex align-items-end col-md-2">
+                                <button type="button" class="btn btn-primary btn-add mr-1"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-danger btn-remove "><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                      </div>
-                      
-                      <div class="mb-3 col-md-8 ">
-                        <label for="exampleFormControlInput1" class="form-label">Etapes
-                            <button type="submit"  class="btn btn-primary ">
-                                <i class="fas fa-plus" style="color:#ffff;"> </i>
-                            </button>
-                        </label>
+                    
+                         <!-- Etapes section -->
+                        <h3 class="box-title mt-3">Etapes</h3>
+                        <p>Merci de fournir les etapes de preparation de votre recette</p>
+                        <div class="etape-section">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label >Etape 1 </label>
+                                    <input type="string" name="step1" class="form-control" placeholder="Description">
+                                </div>
+
+                                <div class="d-flex align-items-end col-md-2">
+                                <button type="button" class="btn btn-primary btn-add-step mr-1"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-danger btn-remove-step"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                         </div>
+                        <!-- Etapes section -->
+                        <h3 class="box-title mt-3">Multimedia</h3>
+                        <p>Tous ce qui est multimedia pour la recette </p>
+                        
                         <div class="row">
-                            <div class="col-md-6">
-                        <input type="text"  id="exampleFormControlInput1" placeholder="Numero d'etape "  class="form-control @error('numero') is-invalid @enderror" name="numero"  required  />
+                            <div class="col-md-9">
+                                <label >Image du resultat </label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                        <input type="text"  id="exampleFormControlInput1" placeholder="Déscription d'etape "  class="form-control @error('description') is-invalid @enderror" name="description"  required  />
-                            </div>
-                      </div>
-                      </div>
-
-                      <div class="mb-3 col-md-8 ">
-                        <label for="exampleFormControlInput1" class="form-label">Temps de préparation</label>
-                        <select  class="form-select" aria-label="Default select example">
-                            <option value="1">10min</option>
-                            <option value="2">15min</option>
-                            <option value="3">20min</option>
-                            <option value="4">30min</option>
-                            <option value="5">45min</option>
-                            <option value="6">1h</option>
-                            <option value="7">1h:30</option>
-                            <option value="8">2h</option>
-                            <option value="9">3h</option>
-                          </select>
-                      </div>
-
-                      <div class="mb-3 col-md-8 ">
-                        <label for="exampleFormControlInput1" class="form-label">Temps de cuisson</label>
-                        <select  class="form-select" aria-label="Default select example">
-                            <option value="1">10min</option>
-                            <option value="2">15min</option>
-                            <option value="3">20min</option>
-                            <option value="4">30min</option>
-                            <option value="5">45min</option>
-                            <option value="6">1h</option>
-                            <option value="7">1h:30</option>
-                            <option value="8">2h</option>
-                            <option value="9">3h</option>
-                          </select>
-                      </div>
-                      <div class="mb-3 col-md-8 ">
-                        <label for="exampleFormControlInput1" class="form-label">Difficulté</label>
-                        <select  class="form-select" aria-label="Default select example">
-                            <option value="1">Facile</option>
-                            <option value="2">Moyen</option>
-                            <option value="3">Difficile</option>
-                            
-                          </select>
-                      </div>
-                      <div class="mb-3 col-md-8 ">
-                        <label for="exampleFormControlInput1" class="form-label">Cout</label>
-                        <select  class="form-select" aria-label="Default select example">
-                            <option value="1">Moins cher</option>
-                            <option value="2">Cher</option>
-                            <option value="3">Assez cher</option>
-                            
-                          </select>
-                      </div>
-
-                      <div class="mb-3 col-md-8 ">
-                        <label for="exampleFormControlInput1" class="form-label">Catégorie</label>
-                        <select  class="form-select" aria-label="Default select example">
-                            <option value="1">Facile</option>
-                            <option value="2">Moyen</option>
-                            <option value="3">Difficile</option>
-                            
-                          </select>
-                      </div>
-                      
-                      
-                        <button type="submit" class="btn btn-primary pl-4 pr-4 float-right">Ajouter</button>
-                    </form> 
+                        </div>
+                        
+                    </form>
+                    <h3 class="box-title mt-3 text-center submitBtn"><button  class="btn btn-primary"> Envoyer la recette </button></h3>
                 </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
-        <!-- End Right sidebar -->
-        <!-- ============================================================== -->
-
         
     </div>
 

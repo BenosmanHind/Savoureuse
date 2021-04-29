@@ -23,4 +23,9 @@ class Recette extends Model
         
         return $this->belongsTo(Categorie::class);
     }
+
+    public function medias(){
+        
+        return $this->hasMany(Media::class);
+    }
 }

@@ -18,11 +18,11 @@ class CreateRecettesTable extends Migration
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->unsignedBigInteger('categorie_id')->unsigned();
             $table->string('titre');
+            $table->Integer('accept')->default(0);
             $table->string('temps_preparation');
             $table->string('temps_cuisson');
             $table->string('cout');
             $table->string('difficulte');
-            $table->string('type');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
