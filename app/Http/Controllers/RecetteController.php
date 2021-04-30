@@ -18,8 +18,6 @@ class RecetteController extends Controller
         $produits = Produit::all();
         $categories = Categorie::all();
         return view('addrecette',compact('produits','categories'));
- 
-         
      }
  
       
@@ -34,6 +32,8 @@ class RecetteController extends Controller
     }
      
      public function store(Request $request){
+         
+         
          $recette = new Recette();
          $recette->user_id = Auth::user()->id; 
          $recette->titre = $request['titre'];
@@ -44,20 +44,31 @@ class RecetteController extends Controller
          $recette->difficulte = $request['difficulte'];
          $recette->save();
          
-         $ingredient = new Ingredient();
+        for($j = 1; $j <=$request->nbringrd ; $j++){
+            $ingredient = new Ingredient();
          
-         $ingredient->quantite = $request['quantite'];
-         $ingredient->produit_id = $request['produits'];
-         $ingredient->unite = $request['unite'];
-         $recette->ingredients()->save($ingredient);
+            $ingredient->quantite = $request['quantite'];
+            $ingredient->produit_id = $request['produits'];
+            $ingredient->unite = $request['unite'];
+            $recette->ingredients()->save($ingredient);
 
-         $etape= new Etape();
-         $etape->description = $request['description'];
-         $recette->etapes()->save($etape);
-
+        }
+        
          
 
-         return Redirect::back();
+        //Insertion des etapes
+                
+        for ($i = 1; $i <= $request->nbr ; $i++) {
+            $etape= new Etape();
+            $etape->description = $request['step'.$i];
+            $recette->etapes()->save($etape);
+        }
+                
+        
+        
+           return redirect('/mes_recettes')
+
+         ->with('success','Recette ajoutée avec success!');
       
      }
 }

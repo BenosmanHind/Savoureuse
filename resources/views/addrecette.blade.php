@@ -133,7 +133,7 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <label >Etape 1 </label>
-                                    <input type="string" name="step1" class="form-control" placeholder="Description">
+                                    <input type="string" name="step1" class="form-control" placeholder="Description" >
                                 </div>
 
                                 <div class="d-flex align-items-end col-md-2">

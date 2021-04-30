@@ -4,11 +4,10 @@ $(document).ready(function(){
            ' <div class="col-md-4">'+
                 '<label>Produit</label>'+
                 '<select class="custom-select">'+
-                '<option>Farine</option>'+
-                '<option>2</option>'+
-                '<option>3</option>'+
-                '<option>4</option>'+
-                '<option>5</option>'+
+                '@foreach ($produits as $produit)'+
+                '<option value={{$produit->id}}>{{$produit->name}}</option>'+
+                '@endforeach'+
+            
                 '</select>'+
             '</div>'+
            ' <div class="col-md-2">'+
@@ -23,8 +22,9 @@ $(document).ready(function(){
                 '</select>'+
             '</div>'+
         '</div>';
-        
+        var j = 1;
     $(".btn-add").click(function(){
+        j++;
       $( ".ingredient-section" ).append(ingrt);
     });
 
@@ -56,7 +56,9 @@ $(document).ready(function(){
 
     $(".submitBtn").click(function(){  
         var inputnbr = '<input name="nbr" type="hidden" value="'+i+'" >';
+        var inputingrd = '<input name="nbringrd" type="hidden" value="'+j+'" >';
         $("#form-recette" ).append(inputnbr );
+        $("#form-recette" ).append(inputingrd );
         $("#form-recette").submit(); // Submit the form
     });
 

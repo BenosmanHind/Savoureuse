@@ -8,6 +8,7 @@ use App\Http\Controllers\ValidateController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\RecetteController;
+use App\Http\Controllers\AcceptController;
 
 
 
@@ -83,6 +84,7 @@ Route::get('/mes_recettes', [App\Http\Controllers\RecetteController::class, 'lis
 Route::get('/recettes_admin', [App\Http\Controllers\RecetteController::class, 'list_recette_admin']);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
+Route::get('/recette_admin/accept/{id}', [App\Http\Controllers\AcceptController::class, 'accept']);
 
 
 

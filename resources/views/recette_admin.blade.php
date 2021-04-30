@@ -74,7 +74,7 @@
                                             
                 
                                             @if($recette->accept == 0)
-                                            <a href=""  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success  ">
+                                            <a href="{{url('recette_admin/accept/'.$recette->id)}}"  onclick="return confirm('Vous voulez vraiment approuver?')" class="btn btn-success  ">
                                               <i class="fas fa-check "> </i>
                                             </a> 
                                             @else  <a href=""   class="btn btn-success  disabled ">
