@@ -45,8 +45,8 @@
                                 <a href="javascript:void(0)"><img src="dashboard/plugins/images/users/image_profile.jpg"
                                         class="thumb-lg img-circle" alt="img"></a>
                                
-                                <h4 class="text-white mt-2"></h4>
-                                 <h5 class="text-white mt-2"></h5>
+                                <h4 class="text-white mt-2">{{ old('name', Auth::user()->name) }}</h4>
+                                 <h5 class="text-white mt-2">{{ old('email', Auth::user()->email) }}</h5>
 
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                 <input type="hidden" name="_method" value="PUT">
                 @csrf
                             <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Full Name</label>
+                                <label class="col-md-12 p-0">Nom Prenom</label>
                                 
                               <div class="col-md-12 border-bottom p-0">
                                     <input type="text" value="{{ old('name', Auth::user()->name) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required class="form-control p-0 border-0" >
@@ -90,9 +90,11 @@
                                     </div>
                             </div>
                             <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Password</label>
+                                <label class="col-md-12 p-0">Mot De Passe </label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="password"  class="form-control p-0 border-0">
+                                    <input type="password"  class="form-control p-0 border-0"class="form-control @error('password') is-invalid @enderror" name="password" >
+
+                               
                                 </div>
                             </div>
                             
@@ -100,7 +102,8 @@
                            
                             <div class="form-group mb-4">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-success">Update Profile</button>
+                                    <button type="submit" class="btn btn-success">Modifier</button>
+                                    
                                 </div>
                             </div>
                         </form>
