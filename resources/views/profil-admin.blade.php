@@ -86,17 +86,17 @@
                                     <label class="col-md-12 p-0">Date de naissance</label>
                                     <div class="col-md-12 border-bottom p-0">
                                     <input type="number"  value="{{ old('date_naissance', Auth::user()->date_naissance) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required > 
-                                       
+                                        class="form-control p-0 border-0"> 
                                 </div>
                             </div>
 
                             <div class="form-group mb-4">
                                 <label for="example-email" class="col-md-12 p-0">Email</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                <input type="email" value="{{ old('email', Auth::user()->email) }}" class="form-control @error('email') is-invalid @enderror" name="email"  required >
+                                <input type="email" value="{{ old('email', Auth::user()->email) }}"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"  required >
 
-                        
-                                        
+                        @error('email')
                                     </div>
                             </div>
                             <div class="form-group mb-4">
