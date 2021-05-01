@@ -44,17 +44,22 @@
                                     <th class="border-top-0">Titre</th>
                                     
                                     <th class="border-top-0">Date</th>
+                                    
                                     <th class="border-top-0">Statu</th>
                                     <th class="border-top-0">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($recettes as $recette)
+                               
+                                    
+                                
                                 <tr>
                                     <td>{{ $recette->id }}</td>
                                     <td>{{ $recette->titre }}</td>
                                     
                                     <td>{{ $recette->created_at }}</td>
+                                    
                                     
                                     <td >
                                         @if ($recette->accept == 0)
@@ -67,7 +72,7 @@
                                     
                                     <td>
                                     
-                                        <form action="" method="post">
+                                        <form action="{{url('recettes_cuisinier/'.$recette->id)}}">
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                             
@@ -86,6 +91,7 @@
                                     
                                     </td>
                                 </tr>
+                                
                                 @endforeach
                             </tbody>
                         </table>

@@ -85,6 +85,8 @@ Route::get('/recettes_admin', [App\Http\Controllers\RecetteController::class, 'l
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
 Route::get('/recette_admin/accept/{id}', [App\Http\Controllers\AcceptController::class, 'accept']);
+Route::get('/recettes_admin/{id}', [App\Http\Controllers\RecetteController::class, 'destroy']);
+Route::get('/recettes_cuisinier/{id}', [App\Http\Controllers\RecetteController::class, 'destroy_recette']);
 
 
 

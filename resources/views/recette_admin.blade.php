@@ -68,7 +68,7 @@
                                     <td>
                                     
                                         
-                                        <form action="" method="post">
+                                        <form action="{{url('recettes_admin/'.$recette->id)}}" >
                                             {{csrf_field()}}
                                             {{method_field('DELETE')}}
                                             
@@ -82,16 +82,16 @@
                                             </a> 
                                             @endif
 
-                                  <a href="" class="btn btn-warning ">
-                                  <i class="fas fa-eye" style="color:#ffff;" > </i>
-                                  </a>
+                                            <a href="" class="btn btn-warning ">
+                                            <i class="fas fa-eye" style="color:#ffff;" > </i>
+                                            </a>
                                    
                                   
                                    
-                                    <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
-                                    <i class="fas fa-trash" style="color:#ffff;"> </i>
+                                            <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
+                                            <i class="fas fa-trash" style="color:#ffff;"> </i>
                                     
-                                    </form>
+                                        </form>
                                     
                                     </td>
                                 </tr>

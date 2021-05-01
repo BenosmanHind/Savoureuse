@@ -23,7 +23,8 @@ class RecetteController extends Controller
       
      public function list_recette(){
          $recettes = Recette::all();
-         return view('recette_cuisinier',['recettes'=>$recettes]);
+         $categories = Categorie::all();
+         return view('recette_cuisinier',['recettes'=>$recettes],['categories'=>$categories]);
      }
 
      public function list_recette_admin(){
@@ -71,4 +72,22 @@ class RecetteController extends Controller
          ->with('success','Recette ajoutée avec success!');
       
      }
+
+     public function destroy($id)
+    {
+        $recette = Recette::find($id);
+        
+        $recette->delete();
+ 
+        return redirect('recettes_admin');
+    }
+
+    public function destroy_recette($id)
+    {
+        $recette = Recette::find($id);
+        
+        $recette->delete();
+ 
+        return redirect('recettes_cuisinier');
+    }
 }
