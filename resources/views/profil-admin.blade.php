@@ -78,15 +78,15 @@
                                 <label class="col-md-12 p-0">Full Name</label>
                                 
                               <div class="col-md-12 border-bottom p-0">
-                                    <input type="text" value="{{ old('name', Auth::user()->name) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required >
+                                    <input type="text" value="{{ old('name', Auth::user()->name) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required class="form-control p-0 border-0" >
                                
-                                        class="form-control p-0 border-0"> </div>
+                                         </div>
                             </div>
                             <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Date de naissance</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                    <input type="number"  value="{{ old('date_naissance', Auth::user()->date_naissance) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required > 
-                                        class="form-control p-0 border-0"> 
+                                    <input type="number"  value="{{ old('date_naissance', Auth::user()->date_naissance) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required  class="form-control p-0 border-0" > 
+                                       
                                 </div>
                             </div>
 
