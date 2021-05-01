@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
 class AdminController extends Controller
@@ -21,6 +20,7 @@ class AdminController extends Controller
         {
            return view('profil-cuisinier');
         }
+    
       
    }
  
@@ -33,17 +33,23 @@ class AdminController extends Controller
       $profil->name = $request->input('name');
        $profil->date_naissance = $request->input('date_naissance');
       $profil->email = $request->input('email');
-
-      $produit->save();
+       if($request['password']{
+                $profil->password = Hash::make;
+      }
+      $profil->save();
       return redirect('profil-admin');  }
       else
       {
       $profil->name = $request->input('name');
        $profil->date_naissance = $request->input('date_naissance');
       $profil->email = $request->input('email');
+      if($request['password']{
+                $profil->password = Hash::make;
+      }
 
-      $produit->save();
+      $profil->save();
       return redirect('profil-cuisinier');  }
+
 
 
     }

@@ -8,7 +8,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Profile page</h4>
+                <h4 class="page-title">Mon Profile</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -45,35 +45,25 @@
                                 <a href="javascript:void(0)"><img src="dashboard/plugins/images/users/image_profile.jpg"
                                         class="thumb-lg img-circle" alt="img"></a>
                                
-                                <h4 class="text-white mt-2">User Name</h4>
-                                 <h5 class="text-white mt-2">info@myadmin.com</h5>
+                                <h4 class="text-white mt-2"></h4>
+                                 <h5 class="text-white mt-2"></h5>
 
                             </div>
                         </div>
                     </div>
-                    <div class="user-btm-box mt-5 d-md-flex">
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>258</h1>
-                        </div>
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>125</h1>
-                        </div>
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>556</h1>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
             <!-- Column -->
             <!-- Column -->
 
-           <form  action="{{url('/profil-admin/'.Auth::user()->id)}}" method="post">
-                <input type="hidden" name="_method" value="PUT">
-                @csrf
+           
             <div class="col-lg-8 col-xlg-9 col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form-horizontal form-material">
+                        <form class="form-horizontal form-material" action="{{url('/profil-admin/'.Auth::user()->id)}}" method="post">
+                <input type="hidden" name="_method" value="PUT">
+                @csrf
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Full Name</label>
                                 
@@ -85,7 +75,7 @@
                             <div class="form-group mb-4">
                                     <label class="col-md-12 p-0">Date de naissance</label>
                                     <div class="col-md-12 border-bottom p-0">
-                                    <input type="number"  value="{{ old('date_naissance', Auth::user()->date_naissance) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required  class="form-control p-0 border-0" > 
+                                    <input type="date"  value="{{ old('date_naissance', Auth::user()->date_naissance) }}" class="form-control @error('date_naissance') is-invalid @enderror" name="date_naissance"  required  class="form-control p-0 border-0" > 
                                        
                                 </div>
                             </div>
@@ -96,13 +86,13 @@
                                 <input type="email" value="{{ old('email', Auth::user()->email) }}"
                                         class="form-control @error('email') is-invalid @enderror" name="email"  required >
 
-                        @error('email')
+                     
                                     </div>
                             </div>
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Password</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="password" value="password" class="form-control p-0 border-0">
+                                    <input type="password"  class="form-control p-0 border-0">
                                 </div>
                             </div>
                             
