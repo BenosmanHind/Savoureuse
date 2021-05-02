@@ -1,14 +1,43 @@
-$(document).ready(function(){
 
+$.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+
+$(document).ready(function(){
+    var inpt;
+    var options= "";
+
+    $.ajax({
+        url:'/get-products',
+        method : 'GET',
+        async: false,
+        success:function(response){
+            for(var i=0 ; i<response.length ; i++){
+               
+                options +=  '<option value = "'+ response[i].id +'">'+ response[i].name+'</option>';
+            }
+            
+        },
+        error:function(){
+            alert("Un probleme !!")
+        }
+
+
+    });
+    
+ 
+   
+   
     var ingrt =  '<div class="row item-ing" id="">'+
            ' <div class="col-md-4">'+
                 '<label>Produit</label>'+
                 '<select class="custom-select">'+
-                '@foreach ($produits as $produit)'+
-                '<option value={{$produit->id}}>{{$produit->name}}</option>'+
-                '@endforeach'+
-            
-                '</select>'+
+                options+
+                '</select>'+ 
+               
             '</div>'+
            ' <div class="col-md-2">'+
                 '<label>Quantité</label>'+
@@ -22,6 +51,8 @@ $(document).ready(function(){
                 '</select>'+
             '</div>'+
         '</div>';
+
+
         var j = 1;
     $(".btn-add").click(function(){
         j++;
@@ -55,6 +86,7 @@ $(document).ready(function(){
     });
 
     $(".submitBtn").click(function(){  
+        
         var inputnbr = '<input name="nbr" type="hidden" value="'+i+'" >';
         var inputingrd = '<input name="nbringrd" type="hidden" value="'+j+'" >';
         $("#form-recette" ).append(inputnbr );

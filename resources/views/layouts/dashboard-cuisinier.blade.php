@@ -136,7 +136,7 @@
                         
                       
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/recettes_cuisinier"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Mes Recettes</span>

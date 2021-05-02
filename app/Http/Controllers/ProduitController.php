@@ -48,4 +48,10 @@ class ProduitController extends Controller
  
         return redirect('produit');
     }
+
+    public function getProducts(){
+        $produits = Produit::all();
+        return $produits;
+    }
+
 }

@@ -20,6 +20,10 @@ class RecetteController extends Controller
         return view('addrecette',compact('produits','categories'));
      }
  
+      public function recettedetail($id){
+          $recette = Recette::find($id);
+          return view('recettepage',['recette'=>$recette]);
+      }
       
      public function list_recette(){
          $recettes = Recette::all();
@@ -67,7 +71,7 @@ class RecetteController extends Controller
                 
         
         
-           return redirect('/mes_recettes')
+           return redirect('/recettes_cuisinier')
 
          ->with('success','Recette ajoutée avec success!');
       

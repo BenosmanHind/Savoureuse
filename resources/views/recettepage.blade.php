@@ -21,7 +21,7 @@
         <!--row-->
         <div class="row">
             <header class="s-title">
-                <h1>Tourte aux poulet</h1>
+                <h1>{{ $recette->titre }}</h1>
             </header>
             <!--content-->
             <section class="content three-fourth">
@@ -47,13 +47,12 @@
                             <article class="one-third">
                                 <dl class="basic">
                                     <dt>Temps de préparations</dt>
-                                    <dd>10 mins</dd>
+                                    <dd>{{ $recette->temps_preparation }}</dd>
                                     <dt>Temps de cuisson</dt>
-                                    <dd>40 mins</dd>
+                                    <dd>{{ $recette->temps_cuisson }}</dd>
                                     <dt>Difficulté</dt>
-                                    <dd>moyen</dd>
-                                    <dt>Sert</dt>
-                                    <dd>4 gens</dd>
+                                    <dd>{{ $recette->difficulte }}</dd>
+                                    
                                 </dl>
                                 
                                 <dl class="user">
