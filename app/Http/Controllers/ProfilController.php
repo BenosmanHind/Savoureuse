@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User;
-class AdminController extends Controller
+class ProfilController extends Controller
 {
    
-     public function index($id){
+     public function index(){
 
         $type=Auth::user()->type;
 
@@ -33,9 +34,9 @@ class AdminController extends Controller
       $profil->name = $request->input('name');
        $profil->date_naissance = $request->input('date_naissance');
       $profil->email = $request->input('email');
-       if($request['password']{
-                $profil->password = Hash::make;
-      }
+       
+                $profil->password = Hash::make($request['password']);
+    
       $profil->save();
       return redirect('profil-admin');  }
       else
@@ -43,10 +44,7 @@ class AdminController extends Controller
       $profil->name = $request->input('name');
        $profil->date_naissance = $request->input('date_naissance');
       $profil->email = $request->input('email');
-      if($request['password']{
-                $profil->password = Hash::make;
-      }
-
+      $profil->password = Hash::make($request['password']);
       $profil->save();
       return redirect('profil-cuisinier');  }
 

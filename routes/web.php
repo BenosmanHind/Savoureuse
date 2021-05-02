@@ -9,7 +9,7 @@ use App\Http\Controllers\ProduitController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\RecetteController;
 use App\Http\Controllers\AcceptController;
-
+use App\Http\Controllers\ProfilController;
 
 
 
@@ -64,11 +64,8 @@ Route::get('/recettes', function()
 {
     return view('les_recettes');
 });
+Route::resource('profil-admin', ProfilController::class);
 
-Route::get('/profil-admin', function()
-{
-    return view('profil-admin');
-});
 Route::get('/profil-cuisinier', function()
 {
     return view('profil-cuisinier');
