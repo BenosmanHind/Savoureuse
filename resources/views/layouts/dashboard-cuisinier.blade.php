@@ -202,6 +202,15 @@
 <script src="{{ asset('dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
 <script src="{{ asset('dashboard/js/pages/dashboards/dashboard1.js') }}"></script>
 <script src="{{ asset('dashboard/js/js-added.js') }}"></script>
+
+<script>
+    $('#inputGroupFile02').on('change',function(){
+        //get the file name
+        var fileName = $(this).val();
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+    })
+    </script>
 </body>
 
 </html>

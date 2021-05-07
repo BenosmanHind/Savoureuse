@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etape;
+use App\Models\Media;
 use App\Models\Produit;
 use App\Models\Recette;
 use App\Models\Categorie;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 
 class RecetteController extends Controller
@@ -21,12 +23,16 @@ class RecetteController extends Controller
      }
  
       public function recettedetail($id){
-          $recette = Recette::find($id);
-          return view('recettepage',['recette'=>$recette]);
+          
+          $recette = Recette::find($id)->first();
+          $ingredients = $recette->ingredients;
+          
+          
+          return view('recettepage',['recette'=>$recette , '$ingredients'=>$ingredients]);
       }
       
      public function list_recette(){
-         $recettes = Recette::all();
+         $recettes = Recette::where('user_id','=',Auth::user()->id)->get();
          $categories = Categorie::all();
          return view('recette_cuisinier',['recettes'=>$recettes],['categories'=>$categories]);
      }
@@ -38,6 +44,15 @@ class RecetteController extends Controller
      
      public function store(Request $request){
          
+         
+        $hasFile = $request->hasFile('picture');
+
+  
+        if($hasFile){
+          $file =  $request->file('picture');
+          $name = $file->store('recettePicture');
+          $lien = Storage::url($name);
+        }
          
          $recette = new Recette();
          $recette->user_id = Auth::user()->id; 
@@ -69,9 +84,13 @@ class RecetteController extends Controller
             $recette->etapes()->save($etape);
         }
                 
+           $media = new Media;
+            $media->lien = $lien;
+            $media->recette_id = 8;
+            $media->save();
+            //$recette->medias()->save($media);
         
-        
-           return redirect('/recettes_cuisinier')
+              return redirect('/recettes_cuisinier')
 
          ->with('success','Recette ajoutée avec success!');
       

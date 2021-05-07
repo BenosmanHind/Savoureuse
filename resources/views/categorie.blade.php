@@ -48,7 +48,7 @@
                         @enderror
                       </div>
                       
-                        <button type="submit" class="btn btn-primary pl-4 pr-4 float-right">Ajouter</button>
+                        <button type="submit" class="btn btn-primary pl-4 pr-4 ml-3">Ajouter</button>
                     </form> 
                 </div>
             </div>
@@ -99,7 +99,7 @@
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
                                     <a href="{{url('categorie/'.$categorie->id.'/edit')}}"  class="btn btn-warning  ">
-                                        <i class="far fa-edit"> </i>
+                                        <i class="far fa-edit" style="color:#ffff;"> </i>
                                       </a> 
                                     <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
                                     <i class="fas fa-trash "style="color:#ffff;"> </i>

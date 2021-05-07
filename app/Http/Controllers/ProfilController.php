@@ -38,7 +38,7 @@ class ProfilController extends Controller
                 $profil->password = Hash::make($request['password']);
     
       $profil->save();
-      return redirect('profil-admin');  }
+      return redirect('home-dashboard-admin');  }
       else
       {
       $profil->name = $request->input('name');
@@ -46,7 +46,7 @@ class ProfilController extends Controller
       $profil->email = $request->input('email');
       $profil->password = Hash::make($request['password']);
       $profil->save();
-      return redirect('profil-cuisinier');  }
+      return redirect('home-dashboard-cuisinier');  }
 
 
 

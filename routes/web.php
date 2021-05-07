@@ -10,6 +10,7 @@ use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\RecetteController;
 use App\Http\Controllers\AcceptController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\AccueilController;
 
 
 
@@ -71,7 +72,7 @@ Route::get('/profil-cuisinier', function()
     return view('profil-cuisinier');
 });
 
-
+Route::resource('/',AccueilController::class);
 Route::resource('addrecette', RecetteController::class);
 Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);

@@ -32,7 +32,7 @@
         <div class="col-md-12">
             <div class="white-box">
                 <div class="container">
-                    <form class="form-group" action="" method="post" id="form-recette">
+                    <form class="form-group" action="" method="post" id="form-recette" enctype="multipart/form-data">
                     @csrf
                         <!-- Destails section -->
                         <h3 class="box-title">Détails</h3>
@@ -148,12 +148,12 @@
                         
                         <div class="row">
                             <div class="col-md-9">
-                                <label >Image du resultat </label>
+                                <label>Image du resultat </label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
-                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                    <input type="file" name="picture" class="custom-file-input" id="inputGroupFile02"/>
+                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
                                 </div>
+                                
                             </div>
                         </div>
                         

@@ -10,11 +10,11 @@
 	<title>Savoureuse</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 	
-	<link rel="stylesheet" href="Accueil/css/style.css" />
-	<link rel="stylesheet" href="Accueil/css/icons.css" />
+	<link rel="stylesheet" href="{{ asset('Accueil/css/style.css') }}" />
+	<link rel="stylesheet" href="{{ asset('Accueil/css/icons.css') }}" />
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
-	<link rel="shortcut icon" href="Accueil/images/favicon.ico" />
+	<link rel="shortcut icon" href="{{ asset('Accueil/images/favicon.ico') }}" />
 	
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -35,7 +35,7 @@
 	<header class="head" role="banner">
 		<!--wrap-->
 		<div class="wrap clearfix">
-			<a href="index.html" title="SocialChef" class="logo"><img src="Accueil/images/ico/logo.png" alt="SocialChef logo" /></a>
+			<a href="index.html" title="SocialChef" class="logo"><img src="{{ asset('Accueil/images/ico/logo.png') }}" alt="SocialChef logo" /></a>
 			
 			<nav class="main-nav" role="navigation" id="menu">
 				<ul>
@@ -133,10 +133,10 @@
 	</footer>
 	<!--//footer-->
 
-	<script src="Accueil/js/jquery-3.1.0.min.js"></script>
-	<script src="Accueil/js/jquery.uniform.min.js"></script>
-	<script src="Accueil/js/jquery.slicknav.min.js"></script>
-	<script src="Accueil/js/scripts.js"></script>
-	<script src="Accueil/js/home.js"></script>	
+	<script src="{{ asset('Accueil/js/jquery-3.1.0.min.js')}}"></script>
+	<script src="{{ asset('Accueil/js/jquery.uniform.min.js') }}"></script>
+	<script src="{{ asset('Accueil/js/jquery.slicknav.min.js') }}"></script>
+	<script src="{{ asset('Accueil/js/scripts.js') }}"></script>
+	<script src="{{ asset('Accueil/js/home.js') }}"></script>	
 </body>
 </html>

@@ -49,7 +49,7 @@
                         @enderror
                       </div>
                       
-                        <button type="submit" class="btn btn-warning pl-4 pr-4 float-right">Modifier</button>
+                        <button type="submit" class="btn btn-warning pl-4 pr-4 ml-3 ">Modifier</button>
                     </form> 
                 </div>
             </div>

@@ -12,7 +12,7 @@
             <ul>
                 <li><a href="index.html" title="Home">Accueil</a></li>
                 <li><a href="#" title="Recipes">Recettes</a></li>
-                <li><a href="recipes.html" title="Cocktails">Déserts</a></li>
+                <li><a href="recipes.html" title="Cocktails">Dessert</a></li>
                 <li>Recette</li>
             </ul>
         </nav>
@@ -30,7 +30,7 @@
                         <div class="row">
                             <!--two-third-->
                             <article class="two-third">
-                                <div class="image"><a href="#"><img src="Accueil/images/img.png" alt="" /></a></div>
+                                <div class="image"><a href="#"><img src="{{ asset('Accueil/images/img.png') }}" alt="" /></a></div>
                                 <div class="intro"><p><strong> Astuces et conseils pour Tourte au poulet facile </strong></p> <p> Vous pouvez remplacer le fromage râpé par des cubes de Roquefort pour une tourte encore plus parfumée. </p></div>
                                 <div class="instructions">
                                     <ol>
@@ -63,16 +63,12 @@
                                 </dl>
                                 
                                 <dl class="ingredients">
-                                    <dt>2</dt>
-                                    <dd>Rouleau de pâte feuilletée</dd>
-                                    <dt>4</dt>
-                                    <dd>Escalopes de poulet</dd>
-                                    <dt>250g</dt>
-                                    <dd>Champignons de Paris</dd>
-                                    <dt>20 cl</dt>
-                                    <dd>Crème fraiche</dd>
-                                    <dt>100g</dt>
-                                    <dd> Fromage râpé</dd>
+                                    <dt>dsfsdf</dt>
+                                    @foreach ($ingredients as $ingredient )
+                                    <dt></dt>
+                                    <dt></dt>
+                                    <dd></dd>
+                                    @endforeach
                                  </dl>
                             </article>
                             <!--//one-third-->
@@ -86,7 +82,7 @@
                         <ol class="comment-list">
                             <!--comment-->
                             <li class="comment depth-1">
-                                <div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /></a></div>
+                                <div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /></a></div>
                                 <div class="comment-box">
                                     <div class="comment-author meta"> 
                                         <strong>Kimberly C.</strong> dit il y a 1 mois <a href="#" class="comment-reply-link"> Répondre</a>
@@ -100,7 +96,7 @@
                             
                             <!--comment-->
                             <li class="comment depth-1">
-                                <div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /></a></div>
+                                <div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /></a></div>
                                 <div class="comment-box">
                                     <div class="comment-author meta"> 
                                         <strong>Alex J.</strong> dit il y a 1 mois <a href="#" class="comment-reply-link"> Répondre</a>
@@ -114,7 +110,7 @@
                             
                             <!--comment-->
                             <li class="comment depth-2">
-                                <div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /></a></div>
+                                <div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /></a></div>
                                 <div class="comment-box">
                                     <div class="comment-author meta"> 
                                         <strong>Kimberly C.</strong> dit il y a 1 mois <a href="#" class="comment-reply-link"> Répondre</a>
@@ -128,7 +124,7 @@
                             
                             <!--comment-->
                             <li class="comment depth-3">
-                                <div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /></a></div>
+                                <div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /></a></div>
                                 <div class="comment-box">
                                     <div class="comment-author meta"> 
                                         <strong>Alex J.</strong> dit il y a 1 mois <a href="#" class="comment-reply-link"> Répondre</a>
@@ -142,7 +138,7 @@
                             
                             <!--comment-->
                             <li class="comment depth-1">
-                                <div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /></a></div>
+                                <div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg"') }} alt="" /></a></div>
                                 <div class="comment-box">
                                     <div class="comment-author meta"> 
                                         <strong>Denise M.</strong> dit il y a 1 mois <a href="#" class="comment-reply-link"> Répondre</a>
@@ -258,15 +254,15 @@
                 <div class="widget members">
                     <h3>Membres qui ont aimé cette recette</h3>
                     <ul class="boxed">
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Kimberly C.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Alex J.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Denise M.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Jason H.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Jennifer W.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Anabelle Q.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Thomas M.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Michelle S.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Bryan A.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Kimberly C.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Alex J.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Denise M.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Jason H.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Jennifer W.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Anabelle Q.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Thomas M.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Michelle S.</span></a></div></li>
+                        <li><div class="avatar"><a href="my_profile.html"><img src="{{ asset('Accueil/images/avatar.jpg') }}" alt="" /><span>Bryan A.</span></a></div></li>
                     </ul>
                 </div>
             </aside>

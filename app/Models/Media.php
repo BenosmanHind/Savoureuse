@@ -13,4 +13,5 @@ class Media extends Model
     {
         return $this->belongsTo(Recette::class);
     }
+
 }
