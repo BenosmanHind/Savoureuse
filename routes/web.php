@@ -66,11 +66,8 @@ Route::get('/recettes', function()
     return view('les_recettes');
 });
 Route::resource('profil-admin', ProfilController::class);
+Route::resource('profil-cuisinier', ProfilController::class);
 
-Route::get('/profil-cuisinier', function()
-{
-    return view('profil-cuisinier');
-});
 
 Route::resource('/',AccueilController::class);
 Route::resource('addrecette', RecetteController::class);

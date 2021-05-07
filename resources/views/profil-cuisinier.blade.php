@@ -10,7 +10,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Profile page</h4>
+                <h4 class="page-title">Mon Profile</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
@@ -40,29 +40,19 @@
             <!-- Column -->
             <div class="col-lg-4 col-xlg-3 col-md-12">
                 <div class="white-box">
-                    <div class="user-bg"> <img width="100%" alt="user" src="dashboard/plugins/images/large/img1.jpg">
+                    <div class="user-bg"> 
                         <div class="overlay-box">
                             <div class="user-content">
-                                <a href="javascript:void(0)"><img src="dashboard/plugins/images/users/genu.jpg"
+                                <a href="javascript:void(0)"><img src="dashboard/plugins/images/users/image_profile.jpg"
                                         class="thumb-lg img-circle" alt="img"></a>
-
+                               
                                 <h4 class="text-white mt-2">{{ old('name', Auth::user()->name) }}</h4>
-                                <h5 class="text-white mt-2">{{ old('email', Auth::user()->email) }}</h5>
+                                 <h5 class="text-white mt-2">{{ old('email', Auth::user()->email) }}</h5>
 
                             </div>
                         </div>
                     </div>
-                    <div class="user-btm-box mt-5 d-md-flex">
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>258</h1>
-                        </div>
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>125</h1>
-                        </div>
-                        <div class="col-md-4 col-sm-4 text-center">
-                            <h1>556</h1>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
             <!-- Column -->
@@ -75,7 +65,7 @@
                                @csrf
     
                             <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Full Name</label>
+                                <label class="col-md-12 p-0">Nom Prenom</label>
                                 
                               <div class="col-md-12 border-bottom p-0">
                                     <input type="text" value="{{ old('name', Auth::user()->name) }}" class="form-control @error('name') is-invalid @enderror" name="name"  required class="form-control p-0 border-0" >
@@ -105,7 +95,7 @@
                                     </div>
                             </div>
                             <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Password</label>
+                                <label class="col-md-12 p-0">Mot De Passe</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <input type="password"  class="form-control p-0 border-0"
                                         class="form-control @error('password') is-invalid @enderror" name="password">
@@ -115,7 +105,7 @@
 
                             <div class="form-group mb-4">
                                 <div class="col-sm-12">
-                                    <button class="btn btn-success">Update Profile</button>
+                                    <button class="btn btn-success">Modifier</button>
                                 </div>
                             </div>
                         </form>
