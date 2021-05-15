@@ -24,8 +24,15 @@
                             <ol class="breadcrumb ms-auto">
                                 <li><a href="#" class="fw-normal">Dashboard</a></li>
                             </ol>
-                           
+                            
                         </div>
+                        
+                         <form role="search" class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
+                                <input type="search" placeholder="Search..." class="form-control mr-sm" name="query">
+                               <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit">search</button>
+                                    
+                            </form>
+                        
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->

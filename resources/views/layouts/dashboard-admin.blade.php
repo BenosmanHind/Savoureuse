@@ -84,8 +84,8 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3" type="get" action="{{url('/search')}}">
-                                <input type="search" placeholder="Search..." class="form-control mt-0" name="query">
+                            <form role="search" class="app-search d-none d-md-block me-3" type="get" >
+                                <input type="search" placeholder="Search..." class="form-control mt-0" >
                                 <a href="" class="active">
                                     <i class="fa fa-search"></i>
                                 </a>
