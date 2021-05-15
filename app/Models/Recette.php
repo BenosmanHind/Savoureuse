@@ -26,6 +26,19 @@ class Recette extends Model
 
     public function medias(){
         
-        return $this->hasMany(Media::class);
+        return $this->hasMany(Image::class);
+    }
+
+    public function returncategorie(){
+        $categorie = null ; 
+        $categorie = Categorie::find($this->categorie_id);
+        return $categorie;
+    
+    }
+
+    public function returnuser(){
+        $cuisinier = null ; 
+        $cuisinier = User::find($this->user_id);
+        return $cuisinier;
     }
 }

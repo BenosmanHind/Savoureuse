@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etape;
-use App\Models\Media;
+use App\Models\Image;
 use App\Models\Produit;
 use App\Models\Recette;
 use App\Models\Categorie;
@@ -24,11 +24,12 @@ class RecetteController extends Controller
  
       public function recettedetail($id){
           
-          $recette = Recette::find($id)->first();
+          $recette = Recette::find($id);
           $ingredients = $recette->ingredients;
+          $etapes = $recette->etapes;
+          $medias= $recette->medias;
           
-          
-          return view('recettepage',['recette'=>$recette , '$ingredients'=>$ingredients]);
+          return view('recettepage',['recette'=>$recette , 'ingredients'=>$ingredients, 'etapes'=>$etapes, 'medias' =>$medias]);
       }
       
      public function list_recette(){
@@ -43,7 +44,7 @@ class RecetteController extends Controller
     }
      
      public function store(Request $request){
-         
+        
          
         $hasFile = $request->hasFile('picture');
 
@@ -84,11 +85,11 @@ class RecetteController extends Controller
             $recette->etapes()->save($etape);
         }
                 
-           $media = new Media;
-            $media->lien = $lien;
-            $media->recette_id = 8;
-            $media->save();
-            //$recette->medias()->save($media);
+           $media = new Image;
+           $media->lien = $lien;
+            
+            
+           $recette->medias()->save($media);
         
               return redirect('/recettes_cuisinier')
 

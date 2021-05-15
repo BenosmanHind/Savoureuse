@@ -82,7 +82,7 @@
                                             </a> 
                                             @endif
 
-                                            <a href="" class="btn btn-warning ">
+                                            <a href="{{ url('recette/'.$recette->id) }}" class="btn btn-warning ">
                                             <i class="fas fa-eye" style="color:#ffff;" > </i>
                                             </a>
                                    

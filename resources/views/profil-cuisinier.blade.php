@@ -43,7 +43,7 @@
                     <div class="user-bg"> 
                         <div class="overlay-box">
                             <div class="user-content">
-                                <a href="javascript:void(0)"><img src="dashboard/plugins/images/users/image_profile.jpg"
+                                <a href="javascript:void(0)"><img src="{{ asset('dashboard/plugins/images/users/image_profile.jpg') }}"
                                         class="thumb-lg img-circle" alt="img"></a>
                                
                                 <h4 class="text-white mt-2">{{ old('name', Auth::user()->name) }}</h4>
@@ -132,9 +132,7 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
-            href="https://www.wrappixel.com/">wrappixel.com</a>
-    </footer>
+   
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->

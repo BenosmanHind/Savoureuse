@@ -19,4 +19,10 @@ class Ingredient extends Model
         return $this->belongsTo(Produit::class);
     }
 
+    public function returnproduct(){
+        $produit = null ; 
+        $produit = Produit::find($this->produit_id);
+        return $produit;
+    }
+
 }
