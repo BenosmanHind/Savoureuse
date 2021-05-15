@@ -11,6 +11,7 @@ use App\Http\Controllers\RecetteController;
 use App\Http\Controllers\AcceptController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\CommentController;
 
 
 
@@ -57,14 +58,11 @@ Route::get('/IsRegister', function()
     return view('IsRegister');
 });
 
-Route::get('/recette', function()
-{
-    return view('recettepage');
-});
 Route::get('/recettes', function()
 {
     return view('les_recettes');
 });
+
 Route::resource('profil-admin', ProfilController::class);
 Route::resource('profil-cuisinier', ProfilController::class);
 
@@ -73,6 +71,9 @@ Route::resource('/',AccueilController::class);
 Route::resource('addrecette', RecetteController::class);
 Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
+Route::resource('comment', CommentController::class);
+Route::resource('/recettedetail', RecetteController::class);
+
 Route::get('/get-products', [App\Http\Controllers\ProduitController::class, 'getProducts']);
 
 Route::get('/cuisinierdetail/{id}', [App\Http\Controllers\CuisinierController::class, 'detail']);
@@ -84,6 +85,7 @@ Route::get('/recette_admin/accept/{id}', [App\Http\Controllers\AcceptController:
 Route::get('/recettes_admin/{id}', [App\Http\Controllers\RecetteController::class, 'destroy']);
 Route::get('/recettes_cuisinier/{id}', [App\Http\Controllers\RecetteController::class, 'destroy_recette']);
 Route::get('/recette/{id}', [App\Http\Controllers\RecetteController::class, 'recettedetail']);
+//Route::get('/recettedetail/{id}', [App\Http\Controllers\RecetteController::class, 'recettepage']);
 Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
 
 
