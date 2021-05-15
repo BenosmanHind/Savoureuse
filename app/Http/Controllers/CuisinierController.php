@@ -34,4 +34,10 @@ class CuisinierController extends Controller
    
 
 }
+public function search()
+{
+  $search_text=$_GET['query'];
+   $cuisinier = User::where('name','LIKE','%'.$search_text.'%')->get();
+   return view('search',['cuisinier'=>$cuisinier]);
+}
 }

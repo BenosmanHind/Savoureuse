@@ -84,7 +84,7 @@ Route::get('/recette_admin/accept/{id}', [App\Http\Controllers\AcceptController:
 Route::get('/recettes_admin/{id}', [App\Http\Controllers\RecetteController::class, 'destroy']);
 Route::get('/recettes_cuisinier/{id}', [App\Http\Controllers\RecetteController::class, 'destroy_recette']);
 Route::get('/recette/{id}', [App\Http\Controllers\RecetteController::class, 'recettedetail']);
-
+Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
 
 
 
