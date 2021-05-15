@@ -10,7 +10,8 @@ class ProfilController extends Controller
    
      public function index(){
 
-        $type=Auth::user()->type;
+      $type=Auth::user()->type;
+
 
         if($type==0)
         {

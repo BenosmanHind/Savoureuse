@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
-
 class CuisinierController extends Controller
 {
     //
@@ -35,9 +34,13 @@ class CuisinierController extends Controller
 
 }
 public function search()
-{
+{ 
+
+    
   $search_text=$_GET['query'];
-   $cuisinier = User::where('name','LIKE','%'.$search_text.'%')->get();
+ $cuisinier = User::where('name','LIKE','%'.$search_text.'%')->where('type',1)->get();
    return view('search',['cuisinier'=>$cuisinier]);
+
 }
+
 }

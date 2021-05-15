@@ -45,10 +45,13 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
+
                             <h3 class="box-title">Vous trouverez ci-joint la table des admins</h3>
+                            <a href="{{url('add_admin')}}" class="btn btn-success float-right"> Ajouter</a>
                             
-                            
+                          
                             <div class="table-responsive">
+
                                 <table class="table text-nowrap">
                                     <thead>
                                         <tr>
