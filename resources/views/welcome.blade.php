@@ -271,7 +271,7 @@
                     <h3>Catégories de recette</h3>
                     <ul class="boxed">
                         @foreach ($categories as $categorie)
-                        <li class="light"><a href="recipes.html" title="Appetizers"><i class="icon icon-themeenergy_pasta"></i> <span>{{ $categorie->name }}
+                        <li class="light"><a href="{{route('voir_recette',['id'=>$categorie->id])}}" title="Appetizers"><i class="icon icon-themeenergy_pasta"></i> <span>{{ $categorie->name }}
                         </span></a></li>
                         @endforeach
                         

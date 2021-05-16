@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Redirect;
 class CommentController extends Controller
 {
     //
-    /*
+   
     public function index(){
         $comments = Comment::all();
-        return view('recettedetail',compact('comments'));
+        return view('comments',compact('comments'));
     }
-*/
+
     public function store(Request $request){
 
     $comment = new Comment();
@@ -26,5 +26,14 @@ class CommentController extends Controller
     $comment->save();
     
     return Redirect::back();
+    }
+
+    public function destroy($id)
+    {
+        $comment = Comment::find($id);
+        
+        $comment->delete();
+ 
+        return redirect('comments');
     }
 }

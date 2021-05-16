@@ -71,7 +71,7 @@ Route::resource('/',AccueilController::class);
 Route::resource('addrecette', RecetteController::class);
 Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
-Route::resource('comment', CommentController::class);
+Route::resource('comments', CommentController::class);
 Route::resource('/recettedetail', RecetteController::class);
 
 Route::get('/get-products', [App\Http\Controllers\ProduitController::class, 'getProducts']);
@@ -85,6 +85,7 @@ Route::get('/recette_admin/accept/{id}', [App\Http\Controllers\AcceptController:
 Route::get('/recettes_admin/{id}', [App\Http\Controllers\RecetteController::class, 'destroy']);
 Route::get('/recettes_cuisinier/{id}', [App\Http\Controllers\RecetteController::class, 'destroy_recette']);
 Route::get('/recette/{id}', [App\Http\Controllers\RecetteController::class, 'recettedetail']);
+Route::get('/categorie_recette/{id}', [App\Http\Controllers\AccueilController::class, 'recettes_categorie'])->name('voir_recette');
 //Route::get('/recettedetail/{id}', [App\Http\Controllers\RecetteController::class, 'recettepage']);
 Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
 
