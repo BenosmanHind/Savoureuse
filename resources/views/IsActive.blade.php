@@ -11,7 +11,7 @@
                    Votre compte a  été désactiver
                       
                            
-                    </form>
+                    
                 </div>
             </div>
         </div>
