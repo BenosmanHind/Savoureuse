@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('photo')->default('image_profile.jpg');
             $table->string('civilite');
             $table->integer('accept')->default(0);
+            $table->integer('activer')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

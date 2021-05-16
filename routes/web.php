@@ -53,6 +53,10 @@ Route::get('/IsAccept', function()
 {
     return view('IsAccept');
 });
+Route::get('/IsActive', function()
+{
+    return view('IsActive');
+});
 Route::get('/IsRegister', function()
 {
     return view('IsRegister');
@@ -81,6 +85,8 @@ Route::get('/recettes_cuisinier', [App\Http\Controllers\RecetteController::class
 Route::get('/recettes_admin', [App\Http\Controllers\RecetteController::class, 'list_recette_admin']);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
+Route::get('/cuisiniers/activer/{id}', [App\Http\Controllers\ValidateController::class, 'activer']);
+Route::get('/cuisiniers/desactiver/{id}', [App\Http\Controllers\ValidateController::class, 'desactiver']);
 Route::get('/recette_admin/accept/{id}', [App\Http\Controllers\AcceptController::class, 'accept']);
 Route::get('/recettes_admin/{id}', [App\Http\Controllers\RecetteController::class, 'destroy']);
 Route::get('/recettes_cuisinier/{id}', [App\Http\Controllers\RecetteController::class, 'destroy_recette']);

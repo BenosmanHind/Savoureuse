@@ -94,6 +94,18 @@
                                                   <i class="fas fa-check" style="color:#ffff;"> </i>
                                                 </a> 
                                                 @endif
+
+                                                @if($cuisinier->activer == 1)
+                                                <a href="{{url('cuisiniers/desactiver/'.$cuisinier->id)}}"  onclick="return confirm('Vous voulez vraiment desactiver le compte ')" class="btn btn-primary  ">
+                                                    <i class="fas fa-toggle-on "> </i>
+                                                  </a> 
+                                                @else
+                                                <a href="{{url('cuisiniers/activer/'.$cuisinier->id)}}"  onclick="return confirm('Vous voulez vraiment activer')" class="btn btn-danger  ">
+                                                    <i class="fas fa-toggle-off "> </i>
+                                                  </a> 
+                                                @endif
+
+
                                           <a href="{{url('cuisinierdetail/'.$cuisinier->id)}}" class="btn btn-warning ">
                                           <i class="fas fa-eye" style="color:#ffff;"> </i>
                                           </a>

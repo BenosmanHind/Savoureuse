@@ -16,4 +16,19 @@ class ValidateController extends Controller
        // $user->update(['accept'=> '1']); 
         return redirect('/cuisiniers');
     }
+
+    public function activer($id){
+        $user = User::find($id);
+        $user->activer = 1;
+        $user->save();
+        return redirect('/cuisiniers');
+    }
+
+    public function desactiver($id){
+        $user = User::find($id);
+        $user->activer = 0;
+        $user->save();
+        return redirect('/cuisiniers');
+        
+    }
 }

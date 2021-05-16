@@ -37,11 +37,17 @@ class LoginController extends Controller
     public function redirectTo(){
         
         $validate = Auth::user()->accept; 
+        $active = Auth::user()->activer;
          if($validate == 0 ){
             Auth()->logout();
             return '/IsAccept';
          }
+        
+        else if($validate == 1 && $active == 0){
+            Auth()->logout();
+            return '/IsActive';
 
+        }
         
         else {
 
