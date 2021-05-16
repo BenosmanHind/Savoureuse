@@ -27,11 +27,7 @@
                             
                         </div>
                         
-                         <form role="search" class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
-                                <input type="search" placeholder="Search..." class="form-control mr-sm" name="query">
-                               <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit">search</button>
-                                    
-                            </form>
+                       
                         
                     </div>
                 </div>
@@ -51,7 +47,17 @@
                     <div class="col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title">Vous trouverez ci-joint la table des cuisiniers</h3>
+                              
                             
+                            <ul class="navbar-nav ms-auto d-flex align-items-left">
+                            <li class=" in">
+                            <form role="search" class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
+                                <input type="search" placeholder="Search..." class="form-control mr-sm" name="query">
+                               <button class="btn btn-outline-primary my-2 my-sm-0 " type="submit">search</button>
+                                </form>    
+                        </li>
+                    </ul>
+                        </li>
                             <div class="table-responsive">
                                 <table class="table text-nowrap">
                                     <thead>
