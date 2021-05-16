@@ -16,6 +16,7 @@ class AdminController extends Controller
         $admins = User::where('type', 0)->get();
         return view('admins',compact('admins'));
    }
+<<<<<<< Updated upstream
 
 
    public function destroy($id)
@@ -23,8 +24,15 @@ class AdminController extends Controller
        $admin = User::find($id);
        
        $admin->delete();
+=======
+   public function destroy(Request $request,$id)
+   {
+       $user=User::find($id);
 
-       return redirect('admins');
+       $user->delete();
+>>>>>>> Stashed changes
+
+       return redirect('/admin');
    }
 
      function create(array $data)
