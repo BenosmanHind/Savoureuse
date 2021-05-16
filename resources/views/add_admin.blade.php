@@ -14,7 +14,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form method="POST" action="{{url('/admins')}}">
+            <form role="form" method="POST" action="{{url('admins')}}">
               @csrf
               <div class="card-body" id="hiddens">
 

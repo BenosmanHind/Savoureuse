@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -27,20 +28,19 @@ class AdminController extends Controller
        return redirect('admins');
    }
 
-     function create(Request $request)
+     public function store(Request $request)
 
     {
       
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'password' => Hash::make($request['password']),
             'date_naissance' => $request['date_naissance'],
             'civilite' => $request['civilite'],
             'type' => 0,
-             'accept' => 1,
-            'password' => Hash::make($request['password']),
-
-        
+            'accept' => 1,
+          
              ]); 
  
         return redirect('admins');

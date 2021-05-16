@@ -78,11 +78,9 @@
                                             {{method_field('DELETE')}}
                                             <button type="submit" onclick="return confirm('Vous voulez vraiment supprimer?')" class="btn btn-danger ">
                                             <i class="fas fa-trash"> </i>
-<<<<<<< Updated upstream
+
                                             </button>
-=======
-                                            
->>>>>>> Stashed changes
+
                                             </form>
                                                
                                             

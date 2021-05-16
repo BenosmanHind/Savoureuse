@@ -42,9 +42,6 @@ Route::get('/home-dashboard-cuisinier', function () {
     return view('home-dashboard-cuisinier');
 });
 
-Route::get('/admins', function () {
-    return view('Admins');
-});
 
 Route::resource('cuisiniers', CuisinierController::class);
 Route::resource('admins', AdminController::class);
@@ -96,6 +93,6 @@ Route::get('/categorie_recette/{id}', [App\Http\Controllers\AccueilController::c
 Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
 Route::get('/add_admin', function()
 {
-    return view('/add_admin');
+    return view('add_admin');
 });
 
