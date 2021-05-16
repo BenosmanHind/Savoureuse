@@ -184,6 +184,13 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/recettes_admin') }}"
+                                aria-expanded="false">
+                                <i class="fas fa-comments" aria-hidden="true"></i>
+                                <span class="hide-menu">Gérer Commentaires</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
                                 aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>

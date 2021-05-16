@@ -219,7 +219,7 @@
                         <div class="entry one-third">
                             <figure>
                                 <img src="Accueil/images/img.png" alt="" />
-                                <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
+                                <figcaption><a href="{{ url('recettedetail/'.$recette->id) }}"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
                                 <h2><a href="recipe.html">{{ $recette->titre }}</a></h2> 
@@ -271,7 +271,7 @@
                     <h3>Catégories de recette</h3>
                     <ul class="boxed">
                         @foreach ($categories as $categorie)
-                        <li class="light"><a href="recipes.html" title="Appetizers"><i class="icon icon-themeenergy_pasta"></i> <span>{{ $categorie->name }}
+                        <li class="light"><a href="{{route('voir_recette',['id'=>$categorie->id])}}" title="Appetizers"><i class="icon icon-themeenergy_pasta"></i> <span>{{ $categorie->name }}
                         </span></a></li>
                         @endforeach
                         

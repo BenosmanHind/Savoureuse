@@ -31,6 +31,17 @@ class RecetteController extends Controller
           
           return view('recettepage',['recette'=>$recette , 'ingredients'=>$ingredients, 'etapes'=>$etapes, 'medias' =>$medias]);
       }
+
+      public function show($id){
+          
+        $recette = Recette::find($id);
+        $ingredients = $recette->ingredients;
+        $etapes = $recette->etapes;
+        $medias= $recette->medias;
+        $comments = $recette->comments->reverse();
+        $comment = $recette->comments->count();
+        return view('recettedetail',['recette'=>$recette , 'ingredients'=>$ingredients, 'etapes'=>$etapes, 'medias' =>$medias, 'comments' =>$comments, 'comment' =>$comment]);
+    }
       
      public function list_recette(){
          $recettes = Recette::where('user_id','=',Auth::user()->id)->get();

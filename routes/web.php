@@ -11,6 +11,7 @@ use App\Http\Controllers\RecetteController;
 use App\Http\Controllers\AcceptController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\CommentController;
 
 
 
@@ -52,19 +53,20 @@ Route::get('/IsAccept', function()
 {
     return view('IsAccept');
 });
+Route::get('/IsActive', function()
+{
+    return view('IsActive');
+});
 Route::get('/IsRegister', function()
 {
     return view('IsRegister');
 });
 
-Route::get('/recette', function()
-{
-    return view('recettepage');
-});
 Route::get('/recettes', function()
 {
     return view('les_recettes');
 });
+
 Route::resource('profil-admin', ProfilController::class);
 Route::resource('profil-cuisinier', ProfilController::class);
 
@@ -73,6 +75,9 @@ Route::resource('/',AccueilController::class);
 Route::resource('addrecette', RecetteController::class);
 Route::resource('categorie', CategorieController::class);
 Route::resource('produit', ProduitController::class);
+Route::resource('comments', CommentController::class);
+Route::resource('/recettedetail', RecetteController::class);
+
 Route::get('/get-products', [App\Http\Controllers\ProduitController::class, 'getProducts']);
 
 Route::get('/cuisinierdetail/{id}', [App\Http\Controllers\CuisinierController::class, 'detail']);
@@ -80,10 +85,14 @@ Route::get('/recettes_cuisinier', [App\Http\Controllers\RecetteController::class
 Route::get('/recettes_admin', [App\Http\Controllers\RecetteController::class, 'list_recette_admin']);
 
 Route::get('/cuisiniers/validate/{id}', [App\Http\Controllers\ValidateController::class, 'accept']);
+Route::get('/cuisiniers/activer/{id}', [App\Http\Controllers\ValidateController::class, 'activer']);
+Route::get('/cuisiniers/desactiver/{id}', [App\Http\Controllers\ValidateController::class, 'desactiver']);
 Route::get('/recette_admin/accept/{id}', [App\Http\Controllers\AcceptController::class, 'accept']);
 Route::get('/recettes_admin/{id}', [App\Http\Controllers\RecetteController::class, 'destroy']);
 Route::get('/recettes_cuisinier/{id}', [App\Http\Controllers\RecetteController::class, 'destroy_recette']);
 Route::get('/recette/{id}', [App\Http\Controllers\RecetteController::class, 'recettedetail']);
+Route::get('/categorie_recette/{id}', [App\Http\Controllers\AccueilController::class, 'recettes_categorie'])->name('voir_recette');
+//Route::get('/recettedetail/{id}', [App\Http\Controllers\RecetteController::class, 'recettepage']);
 Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
 
 Route::get('/add_admin', function()
