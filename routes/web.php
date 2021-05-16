@@ -94,7 +94,6 @@ Route::get('/recette/{id}', [App\Http\Controllers\RecetteController::class, 'rec
 Route::get('/categorie_recette/{id}', [App\Http\Controllers\AccueilController::class, 'recettes_categorie'])->name('voir_recette');
 //Route::get('/recettedetail/{id}', [App\Http\Controllers\RecetteController::class, 'recettepage']);
 Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
-
 Route::get('/add_admin', function()
 {
     return view('/add_admin');

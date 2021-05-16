@@ -16,7 +16,6 @@ class AdminController extends Controller
         $admins = User::where('type', 0)->get();
         return view('admins',compact('admins'));
    }
-<<<<<<< Updated upstream
 
 
    public function destroy($id)
@@ -24,31 +23,27 @@ class AdminController extends Controller
        $admin = User::find($id);
        
        $admin->delete();
-=======
-   public function destroy(Request $request,$id)
-   {
-       $user=User::find($id);
 
-       $user->delete();
->>>>>>> Stashed changes
-
-       return redirect('/admin');
+       return redirect('admins');
    }
 
-     function create(array $data)
-    {
-        if($data['admin'] == 'admin'){
-             return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'date_naissance' => $data['date_naissance'],
-            'civilite' => $data['civilite'],
-            'type' => 0,
-            'password' => Hash::make($data['password']),
-        ]);
-             }
+     function create(Request $request)
 
-        return redirect('admins');
+    {
+      
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'date_naissance' => $request['date_naissance'],
+            'civilite' => $request['civilite'],
+            'type' => 0,
+             'accept' => 1,
+            'password' => Hash::make($request['password']),
+
         
-      }
+             ]); 
+ 
+        return redirect('admins');
+        }
+      
 }

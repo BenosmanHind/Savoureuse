@@ -47,8 +47,8 @@
                         <div class="white-box">
 
                             <h3 class="box-title">Vous trouverez ci-joint la table des admins</h3>
-                            <a href="{{url('add_admin')}}" class="btn btn-success float-right"> Ajouter</a>
-                            
+                        
+                             <a class="btn btn-success float-right" href="{{url('add_admin')}}">   Ajouter</a>
                           
                             <div class="table-responsive">
 

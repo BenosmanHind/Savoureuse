@@ -1,14 +1,7 @@
 @extends('layouts.dashboard-admin')
 
 @section('content')
-<section class="content-header m-4">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>Ajout Admin</h1>
-        </div>
-      </div>
-    </div>
+
 
     
         <div class="container-fluid col-md-6 pt-5 "  id="app">
@@ -122,6 +115,6 @@
             </form>
           </div>
                   
-</section>      
+      
   
 @endsection
