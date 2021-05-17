@@ -63,7 +63,22 @@
                     
                 
                 <h3 class="box-title mt-3 text-center">Ses Recettes</h3>
-                    
+                <div class="row">
+                    @foreach ($recettes as $recette )
+                        
+                   
+                    <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('Accueil/images/img.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ $recette->titre }}</h5>
+                      
+                      <a href="{{ url('recette/'.$recette->id) }}}" class="btn btn-primary">Voir la recette</a>
+                    </div>
+                  </div>
+                    </div>
+                    @endforeach
+                </div>
                 </div>
            
             </div>

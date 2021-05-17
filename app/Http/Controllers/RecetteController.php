@@ -28,8 +28,9 @@ class RecetteController extends Controller
           $ingredients = $recette->ingredients;
           $etapes = $recette->etapes;
           $medias= $recette->medias;
-          
-          return view('recettepage',['recette'=>$recette , 'ingredients'=>$ingredients, 'etapes'=>$etapes, 'medias' =>$medias]);
+          $comments = $recette->comments->reverse();
+          $comment = $recette->comments->count();
+          return view('recettepage',['recette'=>$recette , 'ingredients'=>$ingredients, 'etapes'=>$etapes, 'medias' =>$medias,'comments'=>$comments,'comment'=>$comment]);
       }
 
       public function show($id){

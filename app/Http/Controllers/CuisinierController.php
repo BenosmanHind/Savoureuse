@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Recette;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
+
 class CuisinierController extends Controller
 {
     //
@@ -23,15 +25,14 @@ class CuisinierController extends Controller
        return redirect('cuisiniers');
    }
 
-   public function detail($id){
+   public function detail(Request $request,$id){
 
     $cuisinier = User::find($id);
+    $recettes = Recette::where('user_id',$request->id)->get();
     
-    
-    return view('detail_cuisinier',['cuisinier'=>$cuisinier]);
+    return view('detail_cuisinier',['cuisinier'=>$cuisinier,'recettes'=>$recettes]);
 
    
-
 }
 public function search()
 { 

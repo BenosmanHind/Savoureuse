@@ -35,7 +35,7 @@
             <div class="col-sm-12">
                 <div class="white-box">
                     <h3 class="box-title">Vous trouverez ci-joint la table des recettes</h3>
-                    
+                    <a class="btn btn-primary float-right" href="{{url('addrecette')}}">Ajouter</a>
                     <div class="table-responsive">
                         <table class="table text-nowrap">
                             <thead>

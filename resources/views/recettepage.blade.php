@@ -33,8 +33,8 @@
                             <!--two-third-->
                             <article class="two-third">
                                 <div class="image"><a href="#"><img src="{{ asset('Accueil/images/img.png') }}" alt="" /></a></div>
-                                <div class="intro"><p><strong>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas</strong></p> <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p></div>
-                                <div class="instructions">
+                                
+                                <div class="instructions  mt-3">
                                     <ol>
                                         @foreach ($etapes as $etape )
                                         <li>{{ $etape->description }}</li>
@@ -82,7 +82,37 @@
                     <!--//recipe-->
                         
                     <!--comments-->
-                   
+                    <div class="comments" id="comments">
+                        <h2>{{ $comment }} comments </h2>
+                        <ol class="comment-list">
+                            <!--comment-->
+                            @foreach ($comments as $comment )
+                                
+                          
+                            <li class="comment depth-1">
+                                <div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /></a></div>
+                                <div class="comment-box">
+                                    <div class="comment-author meta"> 
+                                        <strong>{{ $comment->name }}</strong> {{ $comment->created_at->diffForHumans() }} 
+                                    </div>
+                                    <div class="comment-text">
+                                        <p>{{ $comment->comment }}</p>
+                                    </div>
+                                </div> 
+                            </li>
+                          
+                            @endforeach
+                            <!--//comment-->
+                            
+                        
+                            
+                            
+                            
+                            
+                            
+                            
+                        </ol>
+                    </div>
                     <!--//comments-->
                     
                     <!--respond-->
