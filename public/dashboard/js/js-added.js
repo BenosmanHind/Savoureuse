@@ -85,14 +85,39 @@ $(document).ready(function(){
          }
     });
 
+    var n = 1;
+    $(".btn-add-media").click(function(){
+        n++;
+    var media = '<div class="row media ">'+
+                '<div class="col-md-8">'+
+                '<label>Image du resultat </label>'+
+                '<div class="custom-file">'+
+                '<input type="file" name="picture" class="custom-file-input" id="inputGroupFile02"/>'+
+                '<label class="custom-file-label" for="inputGroupFile02">Choose file</label>'+
+                '</div>'+
+                '</div>'+
+                '</div>';
+
+                $(".media-section" ).append(media);
+    });
+    $(".btn-remove-media").click(function(){
+         
+        if(n>1){
+           $(".media:last-child").remove();
+           n--;
+        }
+   });
+
     $(".submitBtn").click(function(){  
         
         var inputnbr = '<input name="nbr" type="hidden" value="'+i+'" >';
         var inputingrd = '<input name="nbringrd" type="hidden" value="'+j+'" >';
+        var inputmedia = '<input name="nbrmedia" type="hidden" value="'+n+'" >';
         $("#form-recette" ).append(inputnbr );
         $("#form-recette" ).append(inputingrd );
+        $("#form-recette" ).append(inputmedia );
         $("#form-recette").submit(); // Submit the form
     });
 
-
+     
   });

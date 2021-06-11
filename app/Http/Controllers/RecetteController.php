@@ -60,13 +60,13 @@ class RecetteController extends Controller
          
         $hasFile = $request->hasFile('picture');
 
-  
+   
         if($hasFile){
           $file =  $request->file('picture');
           $name = $file->store('recettePicture');
           $lien = Storage::url($name);
         }
-         
+    
          $recette = new Recette();
          $recette->user_id = Auth::user()->id; 
          $recette->titre = $request['titre'];
@@ -86,9 +86,7 @@ class RecetteController extends Controller
             $recette->ingredients()->save($ingredient);
 
         }
-        
-         
-
+   
         //Insertion des etapes
                 
         for ($i = 1; $i <= $request->nbr ; $i++) {
@@ -96,16 +94,17 @@ class RecetteController extends Controller
             $etape->description = $request['step'.$i];
             $recette->etapes()->save($etape);
         }
-                
+
+        //insertion des images
+        for($n = 1; $n <= $request->nbrmedia ; $n++){
            $media = new Image;
            $media->lien = $lien;
             
             
            $recette->medias()->save($media);
         
-              return redirect('/recettes_cuisinier')
-
-         ->with('success','Recette ajoutée avec success!');
+        }
+           return redirect('/recettes_cuisinier')->with('success','Recette ajoutée avec success!');
       
      }
 
@@ -126,4 +125,15 @@ class RecetteController extends Controller
  
         return redirect('recettes_cuisinier');
     }
+
+    public function search()
+{ 
+
+   $search_text=$_GET['query'];
+   
+   $recettes = Recette::where('titre','LIKE','%'.$search_text.'%')->get();
+   return view('search_recipe',['recettes'=>$recettes]);
+
+}
+
 }

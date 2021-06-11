@@ -35,23 +35,21 @@
                             <p>Il y aura certainement quelque chose de tentant pour vous d'essayer.</p> 
                             <p>Savourer!</p>
                         </div>
-                        <form action="find_recipe.html">
+                        <form action="{{url('/search-recipe')}}">
                             <div class="f-row">
-                                <input type="text" placeholder="Entrez votre terme de recherche" />
+                                <input type="text" placeholder="Entrez votre terme de recherche" name="query" />
                             </div>
                             <div class="f-row">
                                 <select>
+                                   
                                     <option>ou selectionnez une catégorie</option>
-                                    <option>Apéritifs</option>
-                                    <option>Cocktails</option>
-                                    <option>Déserts</option>
-                                    <option>Plats principaux</option>
-                                    <option>Snacks</option>
-                                    <option>Soupes</option>
+                                    @foreach ($categories as $categorie)
+                                    <option>{{ $categorie->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="f-row bwrap">
-                                <input type="submit" value="Start!" />
+                                <input type="submit" value="Start!"  />
                             </div>
                         </form>
                     </div>
@@ -218,7 +216,7 @@
                         @if( $recette->accept == 1)
                         <div class="entry one-third">
                             <figure>
-                                <img src="Accueil/images/img.png" alt="" />
+                                <img src="{{asset('Accueil/images/img.png')}}" alt="" />
                                 <figcaption><a href="{{ url('recettedetail/'.$recette->id) }}"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">

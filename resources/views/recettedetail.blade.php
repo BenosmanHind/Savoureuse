@@ -32,7 +32,7 @@
                         <div class="row">
                             <!--two-third-->
                             <article class="two-third">
-                                <div class="image"><a href="#"><img src="{{ asset('Accueil/images/img.png') }}" alt="" /></a></div>
+                                <div class="image"><a href="#"><img src="{{asset('Accueil/images/img.png')}}" alt="" /></a></div>
                                 
                                 <div class="instructions mt-3">
                                     <ol>
@@ -120,7 +120,7 @@
                         <div class="container">
                             <p><strong>Note:</strong> Qu'est ce que vous pensez de cette recette ? merci de laisser un avis </p>
                             
-                            <form role="form"  method="POST" action="{{ url('/comment') }}" enctype="multipart/form-data">
+                            <form role="form"  method="POST" action="{{ url('comments') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="f-row">
                                     <div class="third">

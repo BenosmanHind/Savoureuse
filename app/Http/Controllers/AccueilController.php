@@ -12,7 +12,7 @@ class AccueilController extends Controller
     public function index(){
         $recettes = Recette::all();
         $categories = Categorie::all();
-
+        
         
      
         return view('welcome', compact('recettes','categories'));

@@ -156,14 +156,7 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class=" in">
-                            <form role="search" class="app-search d-none d-md-block me-3" type="get" >
-                                <input type="search" placeholder="Search..." class="form-control mt-0" >
-                                <a href="" class="active">
-                                    <i class="fa fa-search"></i>
-                                </a>
-                            </form>
-                        </li>
+                        
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
@@ -193,7 +186,7 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('home-dashboard-admin') }}"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
@@ -207,33 +200,22 @@
                             </a>
                         </li>
                       
-            
                         <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark sidebar-link active"  href="javascript:void(0)"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/cuisiniers') }}"
                                 aria-expanded="false">
                                 <i class="fas fa-users" aria-hidden="true"></i>
-                               
-                                <span class="hide-menu">Gérer Comptes</span>
-                               
-                               
+                                <span class="hide-menu">Gérer Comptes Cuisiniers</span>
                             </a>
-                            <ul aria-expanded="false" class="collapse first-level in">
-                                <li class="sidebar-item active">
-                                    <a href="index.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                       
-                                        <span class="hide-menu"> Gerer admins</span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="index2.html" class="sidebar-link">
-                                        <i class="mdi mdi-adjust"></i>
-                                        <span class="hide-menu"> Gerer Cuisinier</span>
-                                    </a>
-                                </li>
-
-                             </ul>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/admins') }}"
+                                aria-expanded="false">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                <span class="hide-menu">Gérer Comptes Admins</span>
+                            </a>
+                        </li>
+            
+                
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/produit') }}"
                                 aria-expanded="false">
@@ -257,26 +239,27 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/recettes_admin') }}"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/comments') }}"
                                 aria-expanded="false">
                                 <i class="fas fa-comments" aria-hidden="true"></i>
                                 <span class="hide-menu">Gérer Commentaires</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
-                                aria-expanded="false">
-                                <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Gérer Site</span>
-                            </a>
-                        </li>
-                        
-                        
                         <li class="text-center p-20 upgrade-btn">
-                            <a href="https://www.wrappixel.com/templates/ampleadmin/"
-                                class="btn d-grid btn-danger text-white" target="_blank">
-                                Déconnecter</a>
+                        <a class="btn d-grid btn-danger text-white" target="_blank" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                     <div class="text center">
+                                                       
+                                      Déconnecter
+                                       </div>
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                         </li>
+                        
+                       
                     </ul>
 
                 </nav>

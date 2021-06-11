@@ -12,8 +12,8 @@ use App\Http\Controllers\AcceptController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\CommentController;
-
-
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardCuisinierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +91,9 @@ Route::get('/recette/{id}', [App\Http\Controllers\RecetteController::class, 'rec
 Route::get('/categorie_recette/{id}', [App\Http\Controllers\AccueilController::class, 'recettes_categorie'])->name('voir_recette');
 //Route::get('/recettedetail/{id}', [App\Http\Controllers\RecetteController::class, 'recettepage']);
 Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
+Route::get('/search-recipe',[App\Http\Controllers\RecetteController::class, 'search']);
+Route::resource('/home-dashboard-admin', DashboardAdminController::class); 
+Route::resource('/home-dashboard-cuisinier', DashboardCuisinierController::class); 
 Route::get('/add_admin', function()
 {
     return view('add_admin');
