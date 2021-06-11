@@ -12,9 +12,6 @@
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">  
     <title>Savoureuse | Dashboard</title>
-
-
-    
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('ashboard/plugins/images/favicon.png') }}">
@@ -32,46 +29,43 @@
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
 
       <script type="text/javascript">
-       
-          
-       
         //STEP 2 - Chart Data
         const chartData = [{
             "label": "Janvier",
-            "value":  {{$values[1]}}
+            "value": "290"
         }, {
             "label": "Février",
-            "value": {{$values[2]}}
+            "value": "260"
         }, {
             "label": "Mars",
-            "value": {{$values[3]}}
+            "value": "180"
         }, {
             "label": "Avril",
-            "value": {{$values[4]}}
+            "value": "140"
         }, {
             "label": "Mai",
-            "value": {{$values[5]}}
+            "value": "115"
         }, {
             "label": "Juin",
-            "value": {{$values[6]}}
+            "value": "100"
         }, {
             "label": "Juillet",
-            "value": {{$values[7]}}
+            "value": "30"
         }, {
             "label": "Aout",
-            "value": {{$values[8]}}
+            "value": "30"
         },{
             "label": "Septembre",
-            "value": {{$values[9]}}
+            "value": "150"
         },{
             "label": "Octobre",
-            "value": {{$values[10]}}
+            "value": "30"
         },{
             "label": "Novembre",
-            "value": {{$values[10]}}
+            "value": "30"
         },{
             "label": "Décembre",
-            "value": {{$values[12]}}
+            "value": "10"
         }];
     
         //STEP 3 - Chart Configurations
@@ -196,10 +190,6 @@
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
-
-                                
-                                   
-                                
                             </a>
                         </li>
                         <li class="sidebar-item">

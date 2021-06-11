@@ -17,7 +17,6 @@ class CreateCommentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('comment');
-            $table->string('star')->nullable();
             $table->bigInteger('recette_id')->unsigned()->nullable();
             $table->foreign('recette_id')->references('id')->on('recettes')->onDelete('cascade');
             $table->timestamps();

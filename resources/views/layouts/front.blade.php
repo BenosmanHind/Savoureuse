@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="SocialChef - Social Recipe HTML Template" />
@@ -9,14 +8,6 @@
 	<meta name="author" content="themeenergy.com">
 	
 	<title>Savoureuse</title>
-
-
-
-
-
-	  
-
-	<link rel="stylesheet" href="{{asset('Accueil/rating2/simple-rating.css')}}">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 	
 	<link rel="stylesheet" href="{{ asset('Accueil/css/style.css') }}" />
@@ -24,10 +15,6 @@
 	<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e808bf9397.js"></script>
 	<link rel="shortcut icon" href="{{ asset('Accueil/images/favicon.ico') }}" />
-
-   
-
-
 	
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -146,27 +133,10 @@
 	</footer>
 	<!--//footer-->
 
-
-
-
-
-
-
 	<script src="{{ asset('Accueil/js/jquery-3.1.0.min.js')}}"></script>
 	<script src="{{ asset('Accueil/js/jquery.uniform.min.js') }}"></script>
 	<script src="{{ asset('Accueil/js/jquery.slicknav.min.js') }}"></script>
 	<script src="{{ asset('Accueil/js/scripts.js') }}"></script>
 	<script src="{{ asset('Accueil/js/home.js') }}"></script>	
-	<script src="{{asset('Accueil/rating2/simple-rating.js')}}"></script>
-	
-	<script>
-		$( document ).ready(function() {
-			$('.rating').rating();
-  		 });	 
-    </script>
-	
-	
-	
-
 </body>
 </html>

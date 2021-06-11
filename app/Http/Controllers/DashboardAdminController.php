@@ -17,19 +17,7 @@ class DashboardAdminController extends Controller
         $countcomment = $comments->count();
         $recettes = Recette::all(); 
         $countrecette = $recettes->count();
-
-       
-        for($i = 1; $i < 13; $i++) {
-            $nbr = Recette::whereMonth('created_at', $i)->count();
-            $values[$i] = $nbr;
-
-        }
-
         
-      
-        
-     
-        
-        return view ('home-dashboard-admin',['cuisiniers' => $cuisiniers , 'countrecette' => $countrecette , 'countcomment' => $countcomment, 'values' => $values]);
+        return view ('home-dashboard-admin',['cuisiniers' => $cuisiniers , 'countrecette' => $countrecette , 'countcomment' => $countcomment]);
     }
 }

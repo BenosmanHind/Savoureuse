@@ -45,20 +45,4 @@ class Recette extends Model
         $cuisinier = User::find($this->user_id);
         return $cuisinier;
     }
-
-    public function rating(){
-      
-        $rating = 0 ;
-        $i = 0 ;
-        foreach($this->comments as $comment){
-           $rating = $rating + (int)$comment->star;
-           $i = $i +1 ; 
-        }
-        
-        if($i > 0){
-           $rating = $rating / $i ;
-        }
-        
-        return intval($rating);
-     }
 }
