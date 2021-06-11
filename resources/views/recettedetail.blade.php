@@ -20,7 +20,8 @@
         
         <!--row-->
         <header class="s-title" style="display: block;">
-            <h1>{{ $recette->titre }}</h1>
+            <h1>{{ $recette->titre }}</h1> 
+            
         </header>
         <div class="row">
             
@@ -48,7 +49,18 @@
                             
                             <!--one-third-->
                             <article class="one-third">
+                                <div class="simple-rating star-rating mb-3" style="background-color: aliceblue; padding:10px;">
+                                   
+                                   <b> Note Globale : </b>
+                                    @for($i=0;$i<$recette->rating();$i++)
+                                        <i class="fa fa-star"  style="font-size: 1.5em;" data-rating="2" aria-hidden="true"></i>
+                                    
+                                    @endfor
+                                   
+                                </div>
                                 <dl class="basic">
+                                    
+                                   
                                     <dt>Temps de préparation</dt>
                                     <dd>{{ $recette->temps_preparation }}</dd>
                                     <dt>Temps de cuisson</dt>
@@ -92,8 +104,19 @@
                                 <li class="comment depth-1">
 									<div class="avatar"><a href="my_profile.html"><img src="images/avatar.jpg" alt="" /></a></div>
 									<div class="comment-box">
+
 										<div class="comment-author meta"> 
-											<strong>{{ $comment->name }}</strong> {{ $comment->created_at->diffForHumans() }} 
+                                            <div class="row">
+                                                <strong>{{ $comment->name }}</strong> {{ $comment->created_at->diffForHumans() }}  
+                                                <div class="simple-rating star-rating ml-2">
+                                                    @for($i=0;$i<(int)$comment->star;$i++)
+                                                        <i class="fa fa-star" data-rating="2" aria-hidden="true"></i>
+                                                    
+                                                    @endfor
+                                                   
+                                                </div>
+                                            </div>
+                                            
 										</div>
 										<div class="comment-text">
 											<p>{{ $comment->comment }}</p>
@@ -116,12 +139,23 @@
                     
                     <!--respond-->
                     <div class="comment-respond" id="respond">
+                        
                         <h2>Laissez un commentaire</h2>
+
+                        
+
                         <div class="container">
                             <p><strong>Note:</strong> Qu'est ce que vous pensez de cette recette ? merci de laisser un avis </p>
+
+                           
                             
                             <form role="form"  method="POST" action="{{ url('comments') }}" enctype="multipart/form-data">
                                 @csrf
+
+                                <p>
+                                    <input class="rating">
+                                  </p>
+
                                 <div class="f-row">
                                     <div class="third">
                                         <input type="text" placeholder="Votre nom"  class="form-control @error('name') is-invalid @enderror" name="name" />
@@ -171,4 +205,6 @@
     <!--//wrap-->
 </main>
 <!--//main-->
+
+
 @endsection

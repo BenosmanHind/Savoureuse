@@ -12,6 +12,9 @@
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">  
     <title>Savoureuse | Dashboard</title>
+
+
+    
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('ashboard/plugins/images/favicon.png') }}">
@@ -29,43 +32,46 @@
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
 
       <script type="text/javascript">
+       
+          
+       
         //STEP 2 - Chart Data
         const chartData = [{
             "label": "Janvier",
-            "value": "290"
+            "value":  {{$values[1]}}
         }, {
             "label": "Février",
-            "value": "260"
+            "value": {{$values[2]}}
         }, {
             "label": "Mars",
-            "value": "180"
+            "value": {{$values[3]}}
         }, {
             "label": "Avril",
-            "value": "140"
+            "value": {{$values[4]}}
         }, {
             "label": "Mai",
-            "value": "115"
+            "value": {{$values[5]}}
         }, {
             "label": "Juin",
-            "value": "100"
+            "value": {{$values[6]}}
         }, {
             "label": "Juillet",
-            "value": "30"
+            "value": {{$values[7]}}
         }, {
             "label": "Aout",
-            "value": "30"
+            "value": {{$values[8]}}
         },{
             "label": "Septembre",
-            "value": "150"
+            "value": {{$values[9]}}
         },{
             "label": "Octobre",
-            "value": "30"
+            "value": {{$values[10]}}
         },{
             "label": "Novembre",
-            "value": "30"
+            "value": {{$values[10]}}
         },{
             "label": "Décembre",
-            "value": "10"
+            "value": {{$values[12]}}
         }];
     
         //STEP 3 - Chart Configurations
@@ -190,6 +196,10 @@
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
+
+                                
+                                   
+                                
                             </a>
                         </li>
                         <li class="sidebar-item">

@@ -17,12 +17,18 @@ class CommentController extends Controller
     }
 
     public function store(Request $request){
-
+     
     $comment = new Comment();
+    if($request['rating'] == null){
+        $comment->star = "0";
+       
+    }
+    else{
+        $comment->star = $request['rating'];
+    }
     $comment->name = $request['name'];
     $comment->comment = $request['comment'];
     $comment->recette_id = $request['recette_id'];
-    
     $comment->save();
     
     return Redirect::back();
