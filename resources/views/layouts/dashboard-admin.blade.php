@@ -22,6 +22,79 @@
     <link href="{{ asset('dashboard/css/style.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
     <link href="{{ asset('dashboard/css/style-added.css') }}" rel="stylesheet">
+
+         <!-- Step 1 - Include the fusioncharts core library -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <!-- Step 2 - Include the fusion theme -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+
+      <script type="text/javascript">
+        //STEP 2 - Chart Data
+        const chartData = [{
+            "label": "Janvier",
+            "value": "290"
+        }, {
+            "label": "Février",
+            "value": "260"
+        }, {
+            "label": "Mars",
+            "value": "180"
+        }, {
+            "label": "Avril",
+            "value": "140"
+        }, {
+            "label": "Mai",
+            "value": "115"
+        }, {
+            "label": "Juin",
+            "value": "100"
+        }, {
+            "label": "Juillet",
+            "value": "30"
+        }, {
+            "label": "Aout",
+            "value": "30"
+        },{
+            "label": "Septembre",
+            "value": "150"
+        },{
+            "label": "Octobre",
+            "value": "30"
+        },{
+            "label": "Novembre",
+            "value": "30"
+        },{
+            "label": "Décembre",
+            "value": "10"
+        }];
+    
+        //STEP 3 - Chart Configurations
+        const chartConfig = {
+        type: 'column2d',
+        renderAt: 'chart-container',
+        width: '100%',
+        height: '400',
+        dataFormat: 'json',
+        dataSource: {
+            // Chart Configuration
+            "chart": {
+                "caption": "Le nombre de recette cette année ",
+                "subCaption": "2021",
+                "xAxisName": "Mois",
+                "yAxisName": "Nbr Recette",
+                "numberSuffix": "",
+                "theme": "fusion",
+                },
+            // Chart Data
+            "data": chartData
+            }
+        };
+        FusionCharts.ready(function(){
+        var fusioncharts = new FusionCharts(chartConfig);
+        fusioncharts.render();
+        });
+    
+    </script>
 </head>
 
 <body>
@@ -255,6 +328,7 @@
 <script src="{{ asset('dashboard/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js') }}"></script>
 <script src="{{ asset('dashboard/js/pages/dashboards/dashboard1.js') }}"></script>
 <script src="{{ asset('dashboard/js/js-added.js') }}"></script>
+
 
 </body>
 
