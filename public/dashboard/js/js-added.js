@@ -71,7 +71,8 @@ $(document).ready(function(){
          var step = '<div class="row step">'+
                 '<div class="col-md-8">'+
                     '<label >Etape '+ i +'</label>'+
-                    '<input name="step'+i+'" type="string" class="form-control" placeholder="Description">'+
+                    '<textarea type="text" name="step'+i+'" class="form-control" placeholder="Description" ></textarea>'+
+                    
                 '</div>'+
             '</div>';
          $(".etape-section" ).append(step);

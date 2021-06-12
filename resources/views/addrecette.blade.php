@@ -115,7 +115,7 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <label >Etape 1 </label>
-                                    <input type="string" name="step1" class="form-control" placeholder="Description" >
+                                    <textarea type="text" name="step1" class="form-control" placeholder="Description" ></textarea>
                                 </div>
 
                                 <div class="d-flex align-items-end col-md-2">

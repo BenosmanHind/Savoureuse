@@ -33,8 +33,12 @@ class CategorieController extends Controller
      public function edit($id){
 
      $categorie = Categorie::find($id);
-     
-      return view('edit_categorie',compact('categorie'));
+     for($i = 1; $i < 13; $i++) {
+        $nbr = Recette::whereMonth('created_at', $i)->count();
+        $values[$i] = $nbr;
+
+    }
+      return view('edit_categorie',compact('categorie','values'));
      }
 
      public function update(Request $request, $id){

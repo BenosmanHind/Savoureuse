@@ -52,7 +52,7 @@
 			
 			<nav class="main-nav" role="navigation" id="menu">
 				<ul>
-					<li class="current-menu-item"><a href="index.html" title="Home"><span>Home</span></a></li>
+					<li class="current-menu-item"><a href="\" title="Home"><span>Home</span></a></li>
 					<li><a href="{{ url('LesRecettes') }}" title="Recipes"><span>Recettes</span></a>
 						
 					</li>
@@ -63,7 +63,7 @@
 			
 			<nav class="user-nav" role="navigation">
 				<ul>
-					<li class="light"><a href="find_recipe.html" title="Search for recipes"><i class="icon icon-themeenergy_search"></i> <span>Search for recipes</span></a></li>
+					
 					@auth
 					@if (Auth::User()->type==1)
 					
