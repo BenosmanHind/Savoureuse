@@ -21,13 +21,24 @@
     <!-- ============================================================== -->
     <!-- Container fluid  -->
     <!-- ============================================================== -->
+       <ul class="navbar-nav ms-auto d-flex align-items-left">
+                            <li class=" in">
+                            <form role="search" class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
+                                <input type="search" placeholder="Search..." class="form-control mr-sm" name="query">
+                               <button class="btn btn-outline-primary my-2 my-sm-0  " type="submit"align="right" > <i class="fa fa-search"></i></button>
+                               
+                                </form>  
+
+                        </li>
+                    </ul>
     <div class="container-fluid">
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
-                
+               
+                     
                 <div class="white-box">
                     <form role="form"  method="POST" action="{{url('produit')}}" enctype="multipart/form-data">
                         @csrf

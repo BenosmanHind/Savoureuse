@@ -56,4 +56,13 @@ class CategorieController extends Controller
  
         return redirect('categorie');
     }
+    public function search()
+{ 
+
+    
+  $search_text=$_GET['query'];
+ $categorie = User::where('name','LIKE','%'.$search_text.'%')->get();
+   return view('searchcategorie',['categorie'=>$categorie]);
+
+}
 }

@@ -59,5 +59,13 @@ class ProduitController extends Controller
         $produits = Produit::all();
         return $produits;
     }
+public function search()
+{ 
 
+    
+  $search_text=$_GET['query'];
+ $produits = User::where('name','LIKE','%'.$search_text.'%')->get();
+   return view('searchproduit',['produits'=>$produits]);
+
+}
 }
