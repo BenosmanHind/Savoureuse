@@ -37,15 +37,15 @@
                         </div>
                         <form action="{{url('/search-recipe')}}">
                             <div class="f-row">
-                                <input type="text" placeholder="Entrez votre terme de recherche" name="query" />
+                                <input type="text" placeholder="Tapis un mot" name="keyword" />
                             </div>
                             <div class="f-row">
-                                <select>
+                                <select name="select">
                                    
-                                    <option>ou selectionnez une catégorie</option>
+                                    <option value='nothing' >ou selectionnez une catégorie</option>
                                     @foreach ($categories as $categorie)
-                                    <option>{{ $categorie->name }}</option>
-                                    <input type="hidden" name="id" value="{{ $categorie->id }}">
+                                    <option value="{{ $categorie->id }}">{{ $categorie->name }}</option>
+                                    
                                     @endforeach
                                     
                                 </select>

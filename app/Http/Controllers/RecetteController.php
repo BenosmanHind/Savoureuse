@@ -171,14 +171,31 @@ class RecetteController extends Controller
     }
 
     public function search(Request $request)
-{ 
+    {   
 
-   $search_text=$_GET['query'];
-   
-   $recettes = Recette::where('titre','LIKE','%'.$search_text.'%')->where('categorie_id', '=','$request[id]' )->get();
-   return view('search_recipe',['recettes'=>$recettes]);
+        if($request->select != 'nothing' && $request->keyword == null){
+           
+            $recettes = Recette::where('categorie_id', '=', $request->select )->get();
+        }
+        if($request->select != 'nothing' && $request->keyword != null){
+            
+            $recettes = Recette::where('titre','LIKE','%'.$request->keyword.'%')->where('categorie_id', '=', $request->select )->get();
+        }
+        if($request->select == 'nothing' && $request->keyword != null){
+            $recettes = Recette::where('titre','LIKE','%'.$request->keyword.'%')->get();
+        }
+        if($request->select == 'nothing' && $request->keyword == null){
+            $recettes = Recette::where('titre','LIKE','USA1547')->get();
+            
+        }
 
-}
+        
+        
+    return view('search_recipe',['recettes'=>$recettes]);
+
+    }
+
+
   public function LesRecettes(){
       $recettes = Recette::all();
       $categories = Categorie::all();
