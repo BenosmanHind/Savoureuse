@@ -45,7 +45,12 @@ public function search()
     
   $search_text=$_GET['query'];
  $cuisinier = User::where('name','LIKE','%'.$search_text.'%')->where('type',1)->get();
-   return view('search',['cuisinier'=>$cuisinier]);
+ for($i = 1; $i < 13; $i++) {
+    $nbr = Recette::whereMonth('created_at', $i)->count();
+    $values[$i] = $nbr;
+
+}
+   return view('search',['cuisinier'=>$cuisinier,'values'=>$values]);
 
 }
 

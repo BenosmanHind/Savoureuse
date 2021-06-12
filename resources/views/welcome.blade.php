@@ -152,7 +152,7 @@
                 
                 <div class="cwrap">
                     <header class="s-title">
-                        <h2 class="ribbon bright">Dernières recettes</h2>
+                        <h2 class="ribbon bright">Les recettes</h2>
                     </header>
                     
                     <!--entries-->
@@ -170,8 +170,7 @@
                                 <h2><a href="{{ url('recettedetail/'.$recette->id) }}">{{ $recette->titre }}</a></h2> 
                                 <div class="actions">
                                     <div>
-                                        <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
-                                        <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
+                                        
                                         <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">{{ $commentrecette }}</a></div>
                                     </div>
                                 </div>
@@ -195,7 +194,7 @@
                         
                         
                         <div class="quicklinks">
-                            <a href="#" class="button">Plus de recette</a>
+                           
                             <a href="javascript:void(0)" class="button scroll-to-top">Retour au sommet</a>
                         </div>
                     </div>

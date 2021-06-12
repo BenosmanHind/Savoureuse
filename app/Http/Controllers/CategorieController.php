@@ -61,8 +61,13 @@ class CategorieController extends Controller
 
     
   $search_text=$_GET['query'];
- $categorie = User::where('name','LIKE','%'.$search_text.'%')->get();
-   return view('searchcategorie',['categorie'=>$categorie]);
+  $categorie = Categorie::where('name','LIKE','%'.$search_text.'%')->get();
+ for($i = 1; $i < 13; $i++) {
+    $nbr = Recette::whereMonth('created_at', $i)->count();
+    $values[$i] = $nbr;
+
+}
+   return view('searchcategorie',['categorie'=>$categorie,'values'=>$values]);
 
 }
 }

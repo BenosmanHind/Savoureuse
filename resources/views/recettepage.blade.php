@@ -48,6 +48,15 @@
                             
                             <!--one-third-->
                             <article class="one-third">
+                                <div class="simple-rating star-rating mb-3" style="background-color: aliceblue; padding:10px;">
+                                   
+                                    <b> Note Globale : </b>
+                                     @for($i=0;$i<$recette->rating();$i++)
+                                         <i class="fa fa-star"  style="font-size: 1.5em;" data-rating="2" aria-hidden="true"></i>
+                                     
+                                     @endfor
+                                    
+                                 </div>
                                 <dl class="basic">
                                     <dt>Temps de préparation</dt>
                                     <dd>{{ $recette->temps_preparation }}</dd>

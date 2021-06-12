@@ -72,7 +72,7 @@
                                                 <i class="fas fa-eye" style="color:#ffff;" > </i>
                                                 </a>
                 
-                                            <a href=""  class="btn btn-warning  ">
+                                            <a href="{{url('addrecette/'.$recette->id.'/edit')}}"  class="btn btn-warning  ">
                                                 <i class="far fa-edit" style="color:#ffff;"> </i>
                                               </a>                                             
                                   

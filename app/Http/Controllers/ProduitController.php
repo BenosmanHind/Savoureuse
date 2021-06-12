@@ -64,8 +64,13 @@ public function search()
 
     
   $search_text=$_GET['query'];
- $produits = User::where('name','LIKE','%'.$search_text.'%')->get();
-   return view('searchproduit',['produits'=>$produits]);
+  $produits = Produit::where('name','LIKE','%'.$search_text.'%')->get();
+ for($i = 1; $i < 13; $i++) {
+    $nbr = Recette::whereMonth('created_at', $i)->count();
+    $values[$i] = $nbr;
+
+}
+   return view('searchproduit',['produits'=>$produits,'values'=>$values]);
 
 }
 }

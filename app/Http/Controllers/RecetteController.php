@@ -113,6 +113,45 @@ class RecetteController extends Controller
       
      }
 
+     public function edit($id)
+    {
+        $recette = Recette::find($id);
+        $produits = Produit::all();
+        $categories = Categorie::all();
+        return view ('edit_recette',['recette'=>$recette,'produits'=>$produits,'categories'=>$categories]);
+
+
+
+    }
+
+    public function update(Request $request, $id){
+    	$recette = Recette::find($id);
+    	$recette->titre = $request['titre'];
+    	$recette->categorie_id = $request['categorie'];
+        $recette->temps_preparation = $request['temps_preparation'];
+        $recette->temps_cuisson = $request['temps_cuisson'];
+        $recette->cout = $request['cout'];
+        $recette->difficulte = $request['difficulte'];
+
+        for($j = 1; $j <=$request->nbringrd ; $j++){
+            $ingredient = Ingredient::find($id);
+         
+            $ingredient->quantite = $request['quantite'];
+            $ingredient->produit_id = $request['produits'];
+            $ingredient->unite = $request['unite'];
+            $recette->ingredients()->save($ingredient);
+
+        }
+        for ($i = 1; $i <= $request->nbr ; $i++) {
+            $etape= Etape::find($id);
+            $etape->description = $request['step'.$i];
+            $recette->etapes()->save($etape);
+        }
+
+    	$recette->save();
+    	return redirect('/recettes_cuisinier');    	
+    }
+
      public function destroy($id)
     {
         $recette = Recette::find($id);
