@@ -13,7 +13,12 @@ class CommentController extends Controller
    
     public function index(){
         $comments = Comment::all();
-        return view('comments',compact('comments'));
+        for($i = 1; $i < 13; $i++) {
+            $nbr = Recette::whereMonth('created_at', $i)->count();
+            $values[$i] = $nbr;
+
+        }
+        return view('comments',compact('comments','values'));
     }
 
     public function store(Request $request){

@@ -46,6 +46,8 @@ class Recette extends Model
         return $cuisinier;
     }
 
+   
+
     public function rating(){
       
         $rating = 0 ;

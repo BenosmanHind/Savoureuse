@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Recette;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -11,7 +12,12 @@ class CategorieController extends Controller
     //
     public function index(){
         $categories = Categorie::all();
-        return view('categorie',compact('categories'));
+        for($i = 1; $i < 13; $i++) {
+            $nbr = Recette::whereMonth('created_at', $i)->count();
+            $values[$i] = $nbr;
+
+        }
+        return view('categorie',compact('categories','values'));
  
          
      }

@@ -14,7 +14,12 @@ class CuisinierController extends Controller
 
 
         $cuisiniers = User::where('type', 1)->get();
-        return view('cuisiniers',compact('cuisiniers'));
+        for($i = 1; $i < 13; $i++) {
+            $nbr = Recette::whereMonth('created_at', $i)->count();
+            $values[$i] = $nbr;
+
+        }
+        return view('cuisiniers',compact('cuisiniers','values'));
    }
    public function destroy($id)
    {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Recette;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,12 @@ class AdminController extends Controller
 
 
         $admins = User::where('type', 0)->get();
-        return view('admins',compact('admins'));
+        for($i = 1; $i < 13; $i++) {
+            $nbr = Recette::whereMonth('created_at', $i)->count();
+            $values[$i] = $nbr;
+
+        }
+        return view('admins',compact('admins','values'));
    }
 
 

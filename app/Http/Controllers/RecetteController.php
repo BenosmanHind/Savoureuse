@@ -52,7 +52,12 @@ class RecetteController extends Controller
 
      public function list_recette_admin(){
         $recettes = Recette::all();
-        return view('recette_admin',['recettes'=>$recettes]);
+        for($i = 1; $i < 13; $i++) {
+            $nbr = Recette::whereMonth('created_at', $i)->count();
+            $values[$i] = $nbr;
+
+        }
+        return view('recette_admin',['recettes'=>$recettes, 'values'=>$values]);
     }
      
      public function store(Request $request){

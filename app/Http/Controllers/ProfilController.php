@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Recette;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
 class ProfilController extends Controller
 {
    
@@ -12,10 +14,14 @@ class ProfilController extends Controller
 
       $type=Auth::user()->type;
 
+      for($i = 1; $i < 13; $i++) {
+         $nbr = Recette::whereMonth('created_at', $i)->count();
+         $values[$i] = $nbr;
 
+     }
         if($type==0)
         {
-           return view('profil-admin');
+           return view('profil-admin',compact('values'));
         }
         else
 

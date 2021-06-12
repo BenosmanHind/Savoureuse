@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produit;
+use App\Models\Recette;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -11,7 +12,12 @@ class ProduitController extends Controller
     //
     public function index(){
        $produits = Produit::all();
-       return view('produit',compact('produits'));
+       for($i = 1; $i < 13; $i++) {
+        $nbr = Recette::whereMonth('created_at', $i)->count();
+        $values[$i] = $nbr;
+
+    }
+       return view('produit',compact('produits','values'));
 
         
     }
