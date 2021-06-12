@@ -63,4 +63,21 @@ class Recette extends Model
         
         return intval($rating);
      }
+
+
+     
+    public function return_image(){
+     
+
+    
+
+        $image = null ; 
+        $image = Image::where('recette_id',$this->id)->first();
+        return $image;
+      
+       
+     
+     }
+
+
 }

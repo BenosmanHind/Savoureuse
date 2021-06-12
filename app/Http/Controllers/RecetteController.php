@@ -65,11 +65,12 @@ class RecetteController extends Controller
          
         $hasFile = $request->hasFile('picture');
 
-   
+          
         if($hasFile){
           $file =  $request->file('picture');
           $name = $file->store('recettePicture');
-          $lien = Storage::url($name);
+          $lien =  Storage::url($name);
+         
         }
     
          $recette = new Recette();
