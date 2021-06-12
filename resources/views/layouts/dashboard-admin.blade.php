@@ -217,13 +217,7 @@
                                 <span class="hide-menu">Gérer Comptes Cuisiniers</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('/admins') }}"
-                                aria-expanded="false">
-                                <i class="fas fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">Gérer Comptes Admins</span>
-                            </a>
-                        </li>
+                        
             
                 
                         <li class="sidebar-item">
