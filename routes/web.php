@@ -34,9 +34,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home-dashboard-admin', function () {
-    return view('home-dashboard-admin');
-});
+
 
 Route::get('/home-dashboard-cuisinier', function () {
     return view('home-dashboard-cuisinier');
