@@ -50,10 +50,7 @@
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="dashboard.html">
                         <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!-- Dark Logo icon -->
-                            <img src="{{ asset('dashboard/plugins/images/logo-icon.png') }}" alt="homepage" />
-                        </b>
+                      
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
