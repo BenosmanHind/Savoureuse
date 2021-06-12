@@ -97,3 +97,4 @@ Route::get('/add_admin', function()
     return view('add_admin');
 });
 
+Route::get('/LesRecettes',[App\Http\Controllers\RecetteController::class, 'LesRecettes']);

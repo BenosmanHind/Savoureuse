@@ -1,6 +1,9 @@
 @extends('layouts.front')
 @section('content')
 
+
+
+
 <main class="main" role="main">
     <!--wrap-->
     <div class="wrap clearfix">
@@ -73,5 +76,10 @@
     </div>
     <!--//wrap-->
 </main>
+
+
+
+
+
 
 @endsection

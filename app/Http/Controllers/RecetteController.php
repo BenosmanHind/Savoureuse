@@ -126,14 +126,19 @@ class RecetteController extends Controller
         return redirect('recettes_cuisinier');
     }
 
-    public function search()
+    public function search(Request $request)
 { 
 
    $search_text=$_GET['query'];
    
-   $recettes = Recette::where('titre','LIKE','%'.$search_text.'%')->get();
+   $recettes = Recette::where('titre','LIKE','%'.$search_text.'%')->where('categorie_id', '=','$request[id]' )->get();
    return view('search_recipe',['recettes'=>$recettes]);
 
 }
+  public function LesRecettes(){
+      $recettes = Recette::all();
+      $categories = Categorie::all();
+      return view('LesRecettes',compact('recettes','categories'));
+  }
 
 }

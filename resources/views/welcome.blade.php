@@ -30,7 +30,7 @@
                     <div class="widget container">
                         <div class="textwrap">
                             <h3>Recherche de recette </h3>
-                            <p>Il vous suffit de saisir un igredient, un plat ou un mot-clé. </p>
+                            <p>Il vous suffit de saisir le titre d'une recette </p>
                             <p>Vous pouvez également sélectionner une catégorie spécifique dans la liste déroulante</p>
                             <p>Il y aura certainement quelque chose de tentant pour vous d'essayer.</p> 
                             <p>Savourer!</p>
@@ -45,7 +45,9 @@
                                     <option>ou selectionnez une catégorie</option>
                                     @foreach ($categories as $categorie)
                                     <option>{{ $categorie->name }}</option>
+                                    <input type="hidden" name="id" value="{{ $categorie->id }}">
                                     @endforeach
+                                    
                                 </select>
                             </div>
                             <div class="f-row bwrap">
@@ -79,7 +81,7 @@
                         <div class="one-sixth">
                             <div class="container">
                                 <i class="icon icon-themeenergy_chef-hat"></i>
-                                <span class="title dynamic-number" data-dnumber="1730">0</span>
+                                <span class="title dynamic-number" data-dnumber="{{ $membres }}">0</span>
                                 <span class="subtitle">membres</span>
                             </div>
                         </div>
@@ -89,7 +91,7 @@
                         <div class="one-sixth">
                             <div class="container">
                                 <i class="icon icon-themeenergy_pan"></i>
-                                <span class="title dynamic-number" data-dnumber="1250">0</span>
+                                <span class="title dynamic-number" data-dnumber="{{ $countrecette }}">0</span>
                                 <span class="subtitle">recettes</span>
                             </div>
                         </div>
@@ -119,7 +121,7 @@
                         <div class="one-sixth">
                             <div class="container">
                                 <i class="icon icon-themeenergy_chat-bubbles"></i>
-                                <span class="title dynamic-number" data-dnumber="7400">0</span>
+                                <span class="title dynamic-number" data-dnumber="{{ $countcomment }}">0</span>
                                 <span class="subtitle">commentaires</span>
                             </div>
                         </div>
@@ -129,14 +131,14 @@
                         <div class="one-sixth">
                             <div class="container">
                                 <i class="icon icon-themeenergy_stars"></i>
-                                <span class="title dynamic-number" data-dnumber="1700">0</span>
-                                <span class="subtitle">articles</span>
+                                <span class="title dynamic-number" data-dnumber="{{ $countcategorie }}">0</span>
+                                <span class="subtitle">categories</span>
                             </div>
                         </div>
                         <!--//item-->
                     
                         <div class="cta">
-                            <a href="login.html" class="button big">Rejoignez-nous!</a>
+                            <a href="register" class="button big">Rejoignez-nous!</a>
                         </div>
                     </div>
                     <!--//row-->
@@ -147,62 +149,7 @@
             <!--content-->
             <section class="content three-fourth">
                 <!--cwrap-->
-                <div class="cwrap">
-                    <!--entries-->
-                    <div class="entries row">
-                        <!--featured recipe-->
-                        <div class="featured two-third">
-                            <header class="s-title">
-                                <h2 class="ribbon">Recette du jour</h2>
-                            </header>
-                            <article class="entry">
-                                <figure>
-                                    <img src="Accueil/images/img.jpg" alt="" />
-                                    <figcaption><a href="recipe.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
-                                </figure>
-                                <div class="container">
-                                    <h2><a href="recipe.html">Honey Cake</a></h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
-                                    <div class="actions">
-                                        <div>
-                                            <a href="#" class="button">Voir la recette complète</a>
-                                            <div class="more"><a href="recipes2.html">Voir les recettes du jour  passées</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!--//featured recipe-->
-                        
-                        <!--featured member-->
-                        <div class="featured one-third">
-                            <header class="s-title">
-                                <h2 class="ribbon star">Membre en vedette</h2>
-                            </header>
-                            <article class="entry">
-                                <figure>
-                                    <img src="Accueil/images/avatar.jpg" alt="" />
-                                    <figcaption><a href="my_profile.html"><i class="icon icon-themeenergy_eye2"></i> <span>Voir le membre</span></a></figcaption>
-                                </figure>
-                                <div class="container">
-                                    <h2><a href="my_profile.html">Kimberly C.</a></h2>
-                                    <blockquote><i class="fa fa-quote-left"></i>Traditional dishes and fine bakery products accompanied by beautiful photographs to bend around and attract the tryout! Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</blockquote>
-                                    <div class="actions">
-                                        <div>
-                                            <a href="#" class="button">Voir les recettes du jour  passées</a>
-                                            <div class="more"><a href="#">Voir les anciens membres vedettes</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                        <!--//featured member-->
-                    </div>
-                    <!--//entries-->
-                </div>
-                <!--//cwrap-->
-            
-                <!--cwrap-->
+                
                 <div class="cwrap">
                     <header class="s-title">
                         <h2 class="ribbon bright">Dernières recettes</h2>
@@ -220,12 +167,12 @@
                                 <figcaption><a href="{{ url('recettedetail/'.$recette->id) }}"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                             </figure>
                             <div class="container">
-                                <h2><a href="recipe.html">{{ $recette->titre }}</a></h2> 
+                                <h2><a href="{{ url('recettedetail/'.$recette->id) }}">{{ $recette->titre }}</a></h2> 
                                 <div class="actions">
                                     <div>
                                         <div class="difficulty"><i class="ico i-medium"></i><a href="#">medium</a></div>
                                         <div class="likes"><i class="fa fa-heart"></i><a href="#">10</a></div>
-                                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">27</a></div>
+                                        <div class="comments"><i class="fa fa-comment"></i><a href="recipe.html#comments">{{ $commentrecette }}</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -279,28 +226,10 @@
                     
          
                     
-                <div class="widget members">
-                    <h3>Nos membres</h3>
-                    <div id="members-list-options" class="item-options">
-                      <a href="#">Récent</a>
-                      <a class="selected" href="#">Active</a>
-                      <a href="#">Populaire</a>
-                    </div>
-                    <ul class="boxed">
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Kimberly C.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Alex J.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Denise M.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Jason H.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Jennifer W.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Anabelle Q.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Thomas M.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Michelle S.</span></a></div></li>
-                        <li><div class="avatar"><a href="my_profile.html"><img src="Accueil/images/avatar.jpg" alt="" /><span>Bryan A.</span></a></div></li>
-                    </ul>
-                </div>
+             
                     
                 <div class="widget">
-                    <h3>Publicité</h3>
+                    
                     <a href="#"><img src="Accueil/images/advertisment.jpg" alt="" /></a>
                 </div>
             </aside>
