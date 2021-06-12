@@ -56,18 +56,18 @@ class CategorieController extends Controller
  
         return redirect('categorie');
     }
-    public function search()
+    public function searchcategorie()
 { 
 
     
   $search_text=$_GET['query'];
-  $categorie = Categorie::where('name','LIKE','%'.$search_text.'%')->get();
+  $categories = Categorie::where('name','LIKE','%'.$search_text.'%')->get();
  for($i = 1; $i < 13; $i++) {
     $nbr = Recette::whereMonth('created_at', $i)->count();
     $values[$i] = $nbr;
 
 }
-   return view('searchcategorie',['categorie'=>$categorie,'values'=>$values]);
+   return view('searchcategorie',['categories'=>$categories,'values'=>$values]);
 
 }
 }

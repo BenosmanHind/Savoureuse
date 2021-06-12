@@ -59,7 +59,7 @@ class ProduitController extends Controller
         $produits = Produit::all();
         return $produits;
     }
-public function search()
+public function searchproduit()
 { 
 
     

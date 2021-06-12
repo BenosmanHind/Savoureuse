@@ -89,8 +89,8 @@ Route::get('/recette/{id}', [App\Http\Controllers\RecetteController::class, 'rec
 Route::get('/categorie_recette/{id}', [App\Http\Controllers\AccueilController::class, 'recettes_categorie'])->name('voir_recette');
 //Route::get('/recettedetail/{id}', [App\Http\Controllers\RecetteController::class, 'recettepage']);
 Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']);
-Route::get('/searchproduit',[App\Http\Controllers\ProduitController::class, 'search']);
-Route::get('/searchcategorie',[App\Http\Controllers\CategorieController::class, 'search']);
+Route::get('/searchproduit',[App\Http\Controllers\ProduitController::class, 'searchproduit']);
+Route::get('/searchcategorie',[App\Http\Controllers\CategorieController::class, 'searchcategorie']);
 
 Route::get('/search-recipe',[App\Http\Controllers\RecetteController::class, 'search']);
 Route::resource('/home-dashboard-admin', DashboardAdminController::class); 

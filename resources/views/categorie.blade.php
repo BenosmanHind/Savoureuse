@@ -15,16 +15,7 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
-     <ul class="navbar-nav ms-auto d-flex align-items-left">
-                            <li class=" in">
-                            <form role="search" class="form-inline my-2 my-lg-0" type="get" action="{{url('/search')}}">
-                                <input type="search" placeholder="Search..." class="form-control mr-sm" name="query">
-                               <button class="btn btn-outline-primary my-2 my-sm-0  " type="submit"align="right" > <i class="fa fa-search"></i></button>
-                               
-                                </form>  
-
-                        </li>
-                    </ul>
+   
     <!-- ============================================================== -->
     <!-- End Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
@@ -36,6 +27,7 @@
         <!-- Start Page Content -->
         <!-- ============================================================== -->
         <div class="row d-flex justify-content-center">
+
             <div class="col-md-6">
                 
                 <div class="white-box">
@@ -69,10 +61,20 @@
 
         <div class="row d-flex justify-content-center">
             <div class="col-sm-8">
+                
                 <div class="white-box">
                     <h3 class="box-title">Vous trouverez ci-joint la table des catégories</h3>
                     
-                    
+                     <ul class="navbar-nav ms-auto d-flex align-items-left">
+                            <li class=" in">
+                            <form role="search" class="form-inline my-2 my-lg-0" type="get" action="{{url('/searchcategorie')}}">
+                                <input type="search" placeholder="Search..." class="form-control mr-sm" name="query">
+                               <button class="btn btn-outline-primary my-2 my-sm-0  " type="submit"align="right" > <i class="fa fa-search"></i></button>
+                               
+                                </form>  
+
+                        </li>
+                    </ul>
                     <div class="table-responsive">
                         <table class="table text-nowrap">
                             <thead>

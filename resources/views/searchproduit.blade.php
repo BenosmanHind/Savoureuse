@@ -26,27 +26,7 @@
         <!-- ============================================================== -->
         <!-- Start Page Content -->
         <!-- ============================================================== -->
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
-                
-                <div class="white-box">
-                    <form role="form"  method="POST" action="{{url('produit')}}" enctype="multipart/form-data">
-                        @csrf
-                    <div class="mb-3 col-md-12 ">
-                        <label for="exampleFormControlInput1" class="form-label">Nom de produit</label>
-                        <input type="text"  id="exampleFormControlInput1" placeholder="Entrer le nom "  class="form-control @error('name') is-invalid @enderror" name="name"  required  />
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                      </div>
-                      
-                        <button type="submit" class="btn btn-primary pl-4 pr-4 ml-3 ">Ajouter</button>
-                    </form> 
-                </div>
-            </div>
-        </div>
+       
         <!-- ============================================================== -->
         <!-- End PAge Content -->
         <!-- ============================================================== -->
