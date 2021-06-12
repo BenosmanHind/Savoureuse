@@ -23,6 +23,7 @@
                         <div class="card-header bg-danger text-white">{{ __('Erreur Access') }}</div>
         
                         <div class="card-body">
+                            
                            Votre compte a  été désactiver
                               
                                    
