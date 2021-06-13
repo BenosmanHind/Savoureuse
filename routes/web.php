@@ -92,6 +92,9 @@ Route::get('/search',[App\Http\Controllers\CuisinierController::class, 'search']
 Route::get('/searchproduit',[App\Http\Controllers\ProduitController::class, 'searchproduit']);
 Route::get('/searchcategorie',[App\Http\Controllers\CategorieController::class, 'searchcategorie']);
 
+//ici
+Route::delete('/deleteing/{id}',[App\Http\Controllers\IngredientController::class, 'deleteing']);
+
 Route::get('/search-recipe',[App\Http\Controllers\RecetteController::class, 'search']);
 Route::resource('/home-dashboard-admin', DashboardAdminController::class); 
 Route::resource('/home-dashboard-cuisinier', DashboardCuisinierController::class); 

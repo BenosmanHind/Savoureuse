@@ -127,6 +127,8 @@ class RecetteController extends Controller
 
     public function update(Request $request, $id){
 
+      
+        
     	$recette = Recette::find($id);
     	$recette->titre = $request['titre'];
     	$recette->categorie_id = $request['categorie'];
@@ -134,18 +136,27 @@ class RecetteController extends Controller
         $recette->temps_cuisson = $request['temps_cuisson'];
         $recette->cout = $request['cout'];
         $recette->difficulte = $request['difficulte'];
-
-        for($j = 1; $j <= $request->nbringrd ; $j++){
+        
+        for($j = 1; $j <= $request->nbritt ; $j++){
             $nameinput = 'id'.$j ;
             $ingredient = Ingredient::find($request[$nameinput]);
 
-            $namequantite = 'quantite'.$j;
-            $ingredient->quantite = $request[$namequantite];
+            $ingredient->quantite = $request['quantite'.$j];
             $ingredient->produit_id = $request['produit'.$j];
             $ingredient->unite = $request['unite'.$j];
             $recette->ingredients()->save($ingredient);
-
         }
+        
+        //$key = $request->nbringrd - $request->nbritt;
+       
+        for($j = $request->nbritt +1 ; $j <= $request->nbringrd ; $j++){
+            $ingredient = new Ingredient();
+            $ingredient->quantite = $request['quantite'.$j];
+            $ingredient->produit_id = $request['produit'.$j];
+            $ingredient->unite = $request['unite'.$j];
+            $recette->ingredients()->save($ingredient);
+        }
+
         for ($i = 1; $i <= $request->nbr ; $i++) {
             $etape= Etape::find($id);
             $etape->description = $request['step'.$i];
@@ -205,5 +216,10 @@ class RecetteController extends Controller
       $categories = Categorie::all();
       return view('LesRecettes',compact('recettes','categories'));
   }
+  
+
+  
+
+ 
 
 }

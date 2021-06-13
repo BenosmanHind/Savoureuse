@@ -114,12 +114,12 @@
                                     <div class="d-flex align-items-end col-md-2">
                                     @if ($loop->iteration == 1 )
                                         <button type="button" class="btn btn-primary btn-add mr-1"><i class="fa fa-plus" aria-hidden="true"></i></button>
-                                        <button type="button" class="btn btn-danger btn-remove "><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                        <a  class="btn btn-danger btn-remove "><i class="fa fa-minus" aria-hidden="true"></i></a>
                                     @endif
                                     </div>
                                 </div>
                             @endforeach
-                            <input type="hidden" value="{{$i}}" id="nbritt" >
+                            <input type="hidden" name="nbritt" value="{{$i}}" id="nbritt" >
                             
 
                         </div>
@@ -173,7 +173,9 @@
                     
                     </form>
                     <h3 class="box-title mt-3 text-center submitBtn"><button  class="btn btn-primary"> Modifier la recette </button></h3>
+                    
                 </div>
+               
         
     </div>
 
