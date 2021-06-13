@@ -156,10 +156,20 @@ class RecetteController extends Controller
             $ingredient->unite = $request['unite'.$j];
             $recette->ingredients()->save($ingredient);
         }
+        
 
-        for ($i = 1; $i <= $request->nbr ; $i++) {
-            $etape= Etape::find($id);
+        for ($i = 1; $i <= $request->nbrstep ; $i++) {
+            $namestep = 'idstep'.$i ;
+            $etape= Etape::find($request[$namestep]);
             $etape->description = $request['step'.$i];
+            $recette->etapes()->save($etape);
+        }
+
+        for($j = $request->nbrstep +1 ; $j <= $request->nbr ; $j++){
+            $etape = new Etape();
+            $etape->description = $request['step'.$j];
+            
+           
             $recette->etapes()->save($etape);
         }
 

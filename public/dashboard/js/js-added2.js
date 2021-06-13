@@ -31,9 +31,12 @@ $(document).ready(function(){
  
     var j = parseInt($('#nbritt').val());
     var k = parseInt(j);
-  
-  
     var nm = 'id' + k;
+
+
+    var e = parseInt($('#nbrstep').val());
+    var f = parseInt(e);
+    var nm2 = 'id' + f;
 
        
     $(".btn-add").click(function(){
@@ -115,27 +118,36 @@ $(document).ready(function(){
 
     $(".btn-add-step").click(function(){
         
-         i++;
-         var step = '<div class="row step">'+
+         
+         e = e+1;
+         f = f+1;
+         var step = '<div class="row step" id="s'+f+'">'+
                 '<div class="col-md-8">'+
 
-                    '<label >Etape '+ i +'</label>'+
-                    '<textarea type="text" name="step'+i+'" class="form-control" placeholder="Description" ></textarea>'+
+                    '<label >Etape '+ f +'</label>'+
+                    '<textarea type="text" name="step'+f+'" class="form-control" placeholder="Description" ></textarea>'+
                     
 
 
                 '</div>'+
             '</div>';
          $(".etape-section" ).append(step);
+
+         nm2 = 'id' + f;
     });
 
     $(".btn-remove-step").click(function(){
          
-         if(i>1){
-            $(".step:last-child").remove();
-            i--;
-           
-         }
+        if(  f == 1){
+             
+        }
+        else{
+            $('#s'+f).remove();
+            f = f-1;
+            nm2 = 'id' + f;
+            
+        }
+         
 
          
 

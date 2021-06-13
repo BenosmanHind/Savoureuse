@@ -128,12 +128,15 @@
                         <h3 class="box-title mt-3">Etapes</h3>
                         <p>Merci de fournir les etapes de preparation de votre recette</p>
                         <div class="etape-section">
-                            <div class="row">
-                                @foreach ($recette->etapes as $etape)
+                            @foreach ($recette->etapes as $etape)
+                            <div class="row" id="{{'s'.$loop->iteration}}">
+                                
+                                @php ($j = $loop->iteration)
                                 <div class="col-md-8">
 
                                     <label >Etape {{$loop->iteration}}</label>
-                                    <textarea type="string" name="step1" class="form-control" > {{$etape->description}}</textarea>
+                                    <textarea type="string" name="{{'step'.$loop->iteration}}"  class="form-control" > {{$etape->description}}</textarea>
+                                    <input type="hidden" value="{{$etape->id}}" name="{{'idstep'.$loop->iteration}}" >
 
                                 </div>
                                 <div class="d-flex align-items-end col-md-2">
@@ -144,8 +147,10 @@
                                 <button type="button" class="btn btn-danger btn-remove-step"><i class="fa fa-minus" aria-hidden="true"></i></button>
                                     @endif  
                                 </div>
-                                @endforeach
+                                
+                                <input type="hidden" name="nbrstep" value="{{$j}}" id="nbrstep" >
                             </div>
+                            @endforeach
                          </div>
                         <!-- Etapes section -->
                         <h3 class="box-title mt-3">Multimedia</h3>
