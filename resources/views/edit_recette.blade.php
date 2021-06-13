@@ -125,7 +125,7 @@
                                 <div class="col-md-8">
 
                                     <label >Etape {{$loop->iteration}}</label>
-                                    <textarea type="string" name="step1" class="form-control"  > {{$etape->description}}</textarea>
+                                    <textarea type="string" name="step1" class="form-control" > {{$etape->description}}</textarea>
 
                                 </div>
                                 <div class="d-flex align-items-end col-md-2">
