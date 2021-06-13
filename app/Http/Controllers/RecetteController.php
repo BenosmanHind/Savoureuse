@@ -126,7 +126,11 @@ class RecetteController extends Controller
     }
 
     public function update(Request $request, $id){
+<<<<<<< Updated upstream
         dd($request->quantite);
+=======
+       
+>>>>>>> Stashed changes
     	$recette = Recette::find($id);
     	$recette->titre = $request['titre'];
     	$recette->categorie_id = $request['categorie'];
