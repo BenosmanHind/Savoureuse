@@ -123,13 +123,10 @@
                             <div class="row">
                                 @foreach ($recette->etapes as $etape)
                                 <div class="col-md-8">
-<<<<<<< Updated upstream
-                                    <label >Etape 1 </label>
-                                    <textarea type="string" name="step1" class="form-control" placeholder="Description" ></textarea>
-=======
+
                                     <label >Etape {{$loop->iteration}}</label>
-                                    <input type="string" name="step1" class="form-control" value="{{$etape->description}}" >
->>>>>>> Stashed changes
+                                    <textarea type="string" name="step1" class="form-control"  > {{$etape->description}}</textarea>
+
                                 </div>
                                 <div class="d-flex align-items-end col-md-2">
                                   @if ($loop->iteration == 1 )
