@@ -70,9 +70,14 @@ $(document).ready(function(){
          i++;
          var step = '<div class="row step">'+
                 '<div class="col-md-8">'+
+<<<<<<< Updated upstream
                     '<label >Etape '+ i +'</label>'+
                     '<textarea type="text" name="step'+i+'" class="form-control" placeholder="Description" ></textarea>'+
                     
+=======
+                    '<label >Etape ' + i  +'</label>'+
+                    '<input name="step'+i+'" type="string" class="form-control" placeholder="Description">'+
+>>>>>>> Stashed changes
                 '</div>'+
             '</div>';
          $(".etape-section" ).append(step);

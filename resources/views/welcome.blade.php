@@ -76,7 +76,8 @@
                     </header>
                     
                     <!--row-->
-                    <div class="row">
+                    <div class="row d-flex justify-content-center">
+             
                         <!--item-->
                         <div class="one-sixth">
                             <div class="container">
@@ -101,21 +102,13 @@
                         <div class="one-sixth">
                             <div class="container">
                                 <i class="icon icon-themeenergy_image"></i>
-                                <span class="title dynamic-number" data-dnumber="5300">0</span>
+                                <span class="title dynamic-number" data-dnumber="{{ $countphoto }}">0</span>
                                 <span class="subtitle">photos</span>
                             </div>
                         </div>
                         <!--//item-->
                         
-                        <!--item-->
-                        <div class="one-sixth">
-                            <div class="container">
-                                <i class="icon icon-themeenergy_pencil"></i>
-                                <span class="title dynamic-number" data-dnumber="2300">0</span>
-                                <span class="subtitle"></span>
-                            </div>
-                        </div>
-                        <!--//item-->
+                       
                         
                         <!--item-->
                         <div class="one-sixth">

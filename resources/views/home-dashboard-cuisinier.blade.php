@@ -55,14 +55,15 @@
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
-                            <h3 class="box-title">Nombre des produits</h3>
+                            <h3 class="box-title">Ma note : </h3>
                             <ul class="list-inline two-part d-flex align-items-center mb-0">
                                 <li>
-                                    <div id="sparklinedash3"><canvas width="67" height="30"
-                                            style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
-                                    </div>
+                                   
+                                    @for($i=0;$i<$note;$i++)
+                                        <i class="fa fa-2x fa-star" data-rating="2" aria-hidden="true" style="color:#F6C006"></i>
+                                    @endfor
                                 </li>
-                                <li class="ms-auto"><span class="counter text-info">{{ $produit }}</span>
+                             
                                 </li>
                             </ul>
                         </div>

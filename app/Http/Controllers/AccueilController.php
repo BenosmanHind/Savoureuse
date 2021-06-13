@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Comment;
 use App\Models\Recette;
 use App\Models\Categorie;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class AccueilController extends Controller
@@ -22,8 +23,10 @@ class AccueilController extends Controller
         $countcategorie = $categories->count();
         
         $commentrecette = $comment->count();
+
+        $countphoto = Image::all()->count();
      
-        return view('welcome', compact('recettes','categories','countcomment','countrecette','membres','countcategorie','commentrecette'));
+        return view('welcome', compact('recettes','categories','countcomment','countrecette','membres','countcategorie','commentrecette','countphoto'));
     }
 
 

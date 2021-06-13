@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" >
     <link href="{{ asset('dashboard/css/style-added.css') }}" rel="stylesheet">
 
-         <!-- Step 1 - Include the fusioncharts core library -->
+    <!-- Step 1 - Include the fusioncharts core library -->
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
     <!-- Step 2 - Include the fusion theme -->
     <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
 
-      <script type="text/javascript">
+    <script type="text/javascript">
        
           
        

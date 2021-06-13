@@ -136,6 +136,7 @@
 	<script src="{{ asset('Accueil/js/jquery.slicknav.min.js') }}"></script>
 	<script src="{{ asset('Accueil/js/scripts.js') }}"></script>
 	<script src="{{ asset('Accueil/js/home.js') }}"></script>	
+	
 	<script src="{{asset('Accueil/rating2/simple-rating.js')}}"></script>
 	
 	<script>

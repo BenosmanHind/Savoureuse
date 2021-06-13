@@ -154,7 +154,7 @@
 
                                 <p>
                                     <input class="rating">
-                                  </p>
+                                </p>
 
                                 <div class="f-row">
                                     <div class="third">
