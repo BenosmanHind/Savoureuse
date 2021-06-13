@@ -32,7 +32,7 @@
                         <div class="row">
                             <!--two-third-->
                             <article class="two-third">
-                                <div class="image"><a href="#"><img src="{{asset('Accueil/images/img.png')}}" alt="" /></a></div>
+                                <div class="image"><a href="#"><img src="{{$recette->return_image()->lien}}" alt="" /></a></div>
                                 
                                 <div class="instructions  mt-3">
                                     <ol>

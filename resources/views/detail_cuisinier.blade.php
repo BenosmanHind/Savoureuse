@@ -69,7 +69,7 @@
                    
                     <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ asset('Accueil/images/img.png') }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{$recette->return_image()->lien ?? ''}}" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">{{ $recette->titre }}</h5>
                       

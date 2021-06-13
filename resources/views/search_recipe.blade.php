@@ -28,7 +28,7 @@
                   
                     <div class="entry one-third">
                         <figure>
-                            <img src="{{asset('Accueil/images/img.png')}}" alt="" />
+                            <img src="{{$recette->return_image()->lien ?? ''}}" alt="" />
                             <figcaption><a href="{{ url('recettedetail/'.$recette->id) }}"><i class="icon icon-themeenergy_eye2"></i> <span>Voir la recette</span></a></figcaption>
                         </figure>
                         <div class="container">

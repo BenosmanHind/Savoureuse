@@ -98,6 +98,8 @@
                                     <select class="custom-select" name='unite'>
                                     <option>Grs</option>
                                     <option>Litre</option>
+                                    <option>c.a.c</option>
+                                        <option>c.a.s</option>
                                     <option>pièce</option>
                                     </select>
                                 </div>

@@ -126,6 +126,7 @@ class RecetteController extends Controller
     }
 
     public function update(Request $request, $id){
+        dd($request->quantite);
     	$recette = Recette::find($id);
     	$recette->titre = $request['titre'];
     	$recette->categorie_id = $request['categorie'];

@@ -9,7 +9,7 @@
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Ajouter Recette</h4>
+                <h4 class="page-title">Modifier Recette</h4>
             </div>
             
         </div>
@@ -95,13 +95,15 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label>Quantité</label>
-                                        <input type="number" class="form-control" value="{{$ingredient->quantite }}" name='quantite'>
+                                        <input type="number" class="form-control" value="{{$ingredient->quantite }}" name='quantite'.{{ $loop->iteration }}>
                                     </div>
                                     <div class=" col-md-2">
                                         <label >Unité</label>
                                         <select class="custom-select" name='unite'>
                                         <option>Grs</option>
                                         <option>Litre</option>
+                                        <option>c.a.c</option>
+                                        <option>c.a.s</option>
                                         <option>pièce</option>
                                         </select>
                                     </div>

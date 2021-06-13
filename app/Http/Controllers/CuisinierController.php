@@ -34,8 +34,13 @@ class CuisinierController extends Controller
 
     $cuisinier = User::find($id);
     $recettes = Recette::where('user_id',$request->id)->get();
+    for($i = 1; $i < 13; $i++) {
+        $nbr = Recette::whereMonth('created_at', $i)->count();
+        $values[$i] = $nbr;
+
+    }
     
-    return view('detail_cuisinier',['cuisinier'=>$cuisinier,'recettes'=>$recettes]);
+    return view('detail_cuisinier',['cuisinier'=>$cuisinier,'recettes'=>$recettes,'values'=>$values]);
 
    
 }

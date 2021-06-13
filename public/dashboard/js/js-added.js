@@ -48,6 +48,8 @@ $(document).ready(function(){
                 '<select class="custom-select">'+
                 '<option>Grs</option>'+
                 '<option>Litre</option>'+
+                '<option>c.a.c</option>'+
+                 '<option>c.a.s</option>'+
                 '</select>'+
             '</div>'+
         '</div>';
