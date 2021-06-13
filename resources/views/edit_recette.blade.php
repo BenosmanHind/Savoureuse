@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-cuisinier')
+@extends('layouts.dashboard-cuisinier2')
 @section('content')
 
 
@@ -79,12 +79,13 @@
                         <h3 class="box-title mt-3">Ingrédients</h3>
                         <p>Merci de fournir les ingridients avec les informations</p>
                         <div class="ingredient-section">
+                     
                             @foreach ($recette->ingredients as $ingredient)
                                 
-                                <div class="row">
+                                <div class="row" id="{{$loop->iteration}}">
                                     <div class="col-md-4">
                                         <label>Produit</label>
-                                        <select name="produits" class="custom-select">
+                                        <select name="{{'produit'.$loop->iteration}}" class="custom-select">
                                             @foreach ($produits as $produit)
                                     <option value={{$produit->id}} @if($produit->id == $ingredient->produit_id) selected @endif>{{$produit->name}}</option>
                                     
@@ -95,16 +96,19 @@
                                     </div>
                                     <div class="col-md-2">
                                         <label>Quantité</label>
-                                        <input type="number" class="form-control" value="{{$ingredient->quantite }}" name='quantite'.{{ $loop->iteration }}>
+                                        <input type="number" class="form-control" value="{{$ingredient->quantite }}" name="{{'quantite'.$loop->iteration}}" >
+                                        <input type="hidden" value="{{$ingredient->id}}" name="{{'id'.$loop->iteration}}" >
+                                        @php ($i = $loop->iteration)
+                                        
                                     </div>
                                     <div class=" col-md-2">
                                         <label >Unité</label>
-                                        <select class="custom-select" name='unite'>
-                                        <option>Grs</option>
-                                        <option>Litre</option>
-                                        <option>c.a.c</option>
-                                        <option>c.a.s</option>
-                                        <option>pièce</option>
+                                        <select class="custom-select" name="{{'unite'.$loop->iteration}}">
+                                        <option value="Grs">Grs</option>
+                                        <option value="Litre">Litre</option>
+                                        <option value="c.a.c">c.a.c</option>
+                                        <option value="c.a.s">c.a.s</option>
+                                        <option value="pièce">pièce</option>
                                         </select>
                                     </div>
                                     <div class="d-flex align-items-end col-md-2">
@@ -115,6 +119,8 @@
                                     </div>
                                 </div>
                             @endforeach
+                            <input type="hidden" value="{{$i}}" id="nbritt" >
+                            
 
                         </div>
                     

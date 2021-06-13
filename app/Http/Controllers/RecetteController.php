@@ -126,11 +126,7 @@ class RecetteController extends Controller
     }
 
     public function update(Request $request, $id){
-<<<<<<< Updated upstream
-        dd($request->quantite);
-=======
-       
->>>>>>> Stashed changes
+
     	$recette = Recette::find($id);
     	$recette->titre = $request['titre'];
     	$recette->categorie_id = $request['categorie'];
@@ -139,12 +135,14 @@ class RecetteController extends Controller
         $recette->cout = $request['cout'];
         $recette->difficulte = $request['difficulte'];
 
-        for($j = 1; $j <=$request->nbringrd ; $j++){
-            $ingredient = Ingredient::find($id);
-         
-            $ingredient->quantite = $request['quantite'];
-            $ingredient->produit_id = $request['produits'];
-            $ingredient->unite = $request['unite'];
+        for($j = 1; $j <= $request->nbringrd ; $j++){
+            $nameinput = 'id'.$j ;
+            $ingredient = Ingredient::find($request[$nameinput]);
+
+            $namequantite = 'quantite'.$j;
+            $ingredient->quantite = $request[$namequantite];
+            $ingredient->produit_id = $request['produit'.$j];
+            $ingredient->unite = $request['unite'.$j];
             $recette->ingredients()->save($ingredient);
 
         }
